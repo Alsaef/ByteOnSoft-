@@ -159,9 +159,9 @@ const OurService = () => {
           </CarouselItem>
         </CarouselSlides>
 
-        <CarouselControl className="my-4">
+        <CarouselControl className="mx-auto w-full flex flex-row justify-center items-center">
           <CarouselButtons>
-            <CarouselPrevButton />
+            <CarouselPrevButton/>
             <CarouselNextButton />
           </CarouselButtons>
         </CarouselControl>

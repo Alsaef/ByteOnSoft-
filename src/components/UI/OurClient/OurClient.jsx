@@ -22,7 +22,7 @@ const OurClient = () => {
             </div>
 
             {/* Image Grid Section */}
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-2">
+            <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-5">
                 {/* Image 1 */}
                 <div className="flex justify-center items-center">
                     <Image 
