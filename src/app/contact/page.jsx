@@ -1,5 +1,4 @@
 import ContactCard from '@/components/Card/ContactCard';
-import React from 'react';
 
 const page = () => {
     return (
