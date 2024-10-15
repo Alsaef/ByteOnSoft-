@@ -64,7 +64,7 @@ To get started with the IT PORI project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Alsaef/It-pori.git
+   git clone https://github.com/Alsaef/it-pori.git
 
 
 
