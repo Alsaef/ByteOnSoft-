@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="mt-10">
             <footer className="bg-gray-900 shadow p-4">
                 <div className="w-full p-4 md:py-8">
-                    <div className="flex items-start justify-evenly">
+                    <div className="flex lg:items-start justify-evenly lg:flex-row flex-col">
                         <div className='flex flex-col justify-start items-start space-y-3 text-white'>
                             <Link href="/" className="flex items-center space-x-3">
                                 <Image src={Logo} width={50} height={50} className="rounded-full" alt="Logo" /> {/* Using Image from Next.js */}
@@ -72,26 +72,6 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-400 sm:mb-0">
-                            <li>
-                                <Link href="/" className="hover:underline me-4 md:me-6 text-gray-400 hover:text-white">Home</Link>
-                            </li>
-                            <li>
-                                <Link href="/about" className="hover:underline me-4 md:me-6 text-gray-400 hover:text-white">About</Link>
-                            </li>
-                            <li>
-                                <Link href="/services" className="hover:underline me-4 md:me-6 text-gray-400 hover:text-white">Services</Link>
-                            </li>
-                            <li>
-                                <Link href="/clients" className="hover:underline me-4 md:me-6 text-gray-400 hover:text-white">Clients</Link>
-                            </li>
-                            <li>
-                                <Link href="/career" className="hover:underline me-4 md:me-6 text-gray-400 hover:text-white">Career</Link>
-                            </li>
-                            <li>
-                                <Link href="/contact" className="hover:underline text-gray-400 hover:text-white">Contact</Link>
-                            </li>
-                        </ul> */}
                     </div>
                     <hr className="my-6 border-gray-700 sm:mx-auto lg:my-8" />
                     <span className="block text-sm text-gray-400 sm:text-center">
