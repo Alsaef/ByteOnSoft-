@@ -14,12 +14,14 @@ import Link from 'next/link';
 
 const NavBar = () => {
     const navItem = <>
-        <NavbarItem className="hover:text-[#4a3989] cursor-pointer uppercase"><Link href='/'>Home</Link></NavbarItem>
-        <NavbarItem className="hover:text-[#4a3989] cursor-pointer uppercase"><Link href='/about'>About</Link></NavbarItem>
-        <NavbarItem className="hover:text-[#4a3989] cursor-pointer uppercase"><Link href='/services'>Services</Link></NavbarItem>
-        <NavbarItem className="hover:text-[#4a3989] cursor-pointer uppercase"><Link href='/clients'>Clients</Link></NavbarItem>
-        <NavbarItem className="hover:text-[#4a3989] cursor-pointer uppercase"><Link href='/career'>Career</Link></NavbarItem>
-        <NavbarItem className="hover:text-[#4a3989] cursor-pointer uppercase"><Link href='/contact'>Contact</Link></NavbarItem>
+
+        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/'>Home</Link></NavbarItem>
+        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/about'>About Us</Link></NavbarItem>
+        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/services'>Services</Link></NavbarItem>
+        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/clients'>Clients</Link></NavbarItem>
+        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/career'>Career</Link></NavbarItem>
+        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/contact'>Contact</Link></NavbarItem>
+
     </>
     return (
         <nav className="bg-white shadow-sm">
