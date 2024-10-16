@@ -13,9 +13,9 @@ const DoProjects = () => {
             <div className='my-5'>
                 <h2 className="lg:text-4xl md:text-3xl sm:text-2xl text-2xl text-center py-2 relative ">
                     WE CAN DO IT
-                    <span className="block w-14 h-1 bg-blue-500 absolute bottom-0 left-1/2 transform -translate-x-1/2 mt-1"></span>
+                    <span className="block w-14 h-1 bg-[#4a3989] absolute bottom-0 left-1/2 transform -translate-x-1/2 mt-1"></span>
                 </h2>
-                <p className='lg:text-xl md:text-xl sm:text-xs text-xs text-blue-500 text-center mt-3'>GET IN TOUCH</p>
+                <p className='lg:text-xl md:text-xl sm:text-xs text-xs text-[#4a3989] text-center mt-3'>GET IN TOUCH</p>
             </div>
             
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto w-[95%]'>
