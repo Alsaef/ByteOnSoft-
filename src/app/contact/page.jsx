@@ -53,14 +53,23 @@ const page = () => {
                                 <div className='bg-[#4a3989] p-2 rounded-md flex m-auto'>
                                     <FaInstagram className='w-6 h-6 text-white' />
                                 </div>
-                            
+
                             </div>
                         </div>
                     </div>
 
                     {/*TODO: insert Map */}
                     <div className='p-3 md:p-5'>
-
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14606.342549758574!2d90.42249473135682!3d23.762151297377944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b80a03c8e22f%3A0xd52685f4a2fe003c!2sBanasree%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1729071621642!5m2!1sen!2sbd"
+                            width="600"
+                            height="450"
+                            style={{ border: 0 }}
+                            loading="lazy" 
+                            allowFullScreen=""
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Banasree, Dhaka Map"
+                        ></iframe>
                     </div>
 
                 </div>
