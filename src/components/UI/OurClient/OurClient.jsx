@@ -14,15 +14,15 @@ const OurClient = () => {
             <div className='my-5'>
                 <h2 className="lg:text-4xl md:text-3xl sm:text-2xl text-2xl text-center py-2 relative">
                     OUR CLIENTS
-                    <span className="block w-14 h-1 bg-blue-500 absolute bottom-0 left-1/2 transform -translate-x-1/2 mt-1"></span>
+                    <span className="block w-14 h-1 bg-[#4a3989] absolute bottom-0 left-1/2 transform -translate-x-1/2 mt-1"></span>
                 </h2>
-                <p className='lg:text-xl md:text-xl sm:text-xs text-xs text-blue-500 text-center mt-3'>
+                <p className='lg:text-xl md:text-xl sm:text-xs text-xs text-[#4a3989] text-center mt-3'>
                     GET IN TOUCH
                 </p>
             </div>
 
             {/* Image Grid Section */}
-            <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-5">
+            <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-5 justify-items-center">
                 {/* Image 1 */}
                 <div className="flex justify-center items-center">
                     <Image 
