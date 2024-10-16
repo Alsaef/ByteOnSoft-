@@ -4,7 +4,7 @@ export const metadata = {
 }
 
 import ContactCard from '@/components/Card/ContactCard';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 
 const page = () => {
     return (
@@ -53,7 +53,6 @@ const page = () => {
                                 <div className='bg-[#4a3989] p-2 rounded-md flex m-auto'>
                                     <FaInstagram className='w-6 h-6 text-white' />
                                 </div>
-
                             </div>
                         </div>
                     </div>
