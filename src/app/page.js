@@ -1,3 +1,4 @@
+import ContactHome from '@/components/UI/Contact-Home/ContactHome';
 import DoProjects from '@/components/UI/DoProjects/DoProjects';
 import Hero from '@/components/UI/Hero/Hero';
 import OurClient from '@/components/UI/OurClient/OurClient';
@@ -12,6 +13,7 @@ export default function Home() {
      <DoProjects></DoProjects>
      <Performance></Performance>
      <OurClient></OurClient>
+     <ContactHome></ContactHome>
     </div>
   );
 }
