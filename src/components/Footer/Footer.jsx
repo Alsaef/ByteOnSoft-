@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="mt-10">
             <footer className="bg-gray-900 shadow p-4">
                 <div className="w-full p-4 md:py-8">
-                    <div className="flex lg:items-start justify-evenly lg:flex-row flex-col">
+                    <div className="flex items-start  justify-evenly lg:flex-row flex-col gap-4">
                         <div className='flex flex-col justify-start items-start space-y-3 text-white'>
                             <Link href="/" className="flex items-center space-x-3">
                                 <Image src={Logo} width={50} height={50} className="rounded-full" alt="Logo" /> {/* Using Image from Next.js */}

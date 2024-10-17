@@ -4,6 +4,7 @@ import Hero from '@/components/UI/Hero/Hero';
 import OurClient from '@/components/UI/OurClient/OurClient';
 import OurService from '@/components/UI/OurService/OurService';
 import Performance from '@/components/UI/Performance/Performance';
+import Testimonials from '@/components/UI/Testimonials/Testimonials';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
      <Performance></Performance>
      <OurClient></OurClient>
      <ContactHome></ContactHome>
+     <Testimonials></Testimonials>
     </div>
   );
 }
