@@ -115,13 +115,8 @@ const Testimonials = () => {
                     </CarouselItem>
                 </CarouselSlides>
 
-                {/* Carousel Control */}
-                <CarouselControl className="mx-auto w-full flex flex-row justify-center items-center">
-                    <CarouselButtons>
-                        <CarouselPrevButton />
-                        <CarouselNextButton />
-                    </CarouselButtons>
-                </CarouselControl>
+                
+             
             </Carousel>
         </div>
     );
