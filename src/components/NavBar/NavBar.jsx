@@ -18,7 +18,6 @@ const NavBar = () => {
         <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/'>Home</Link></NavbarItem>
         <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/about'>About Us</Link></NavbarItem>
         <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/services'>Services</Link></NavbarItem>
-        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/clients'>Clients</Link></NavbarItem>
         <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/career'>Career</Link></NavbarItem>
         <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/contact'>Contact</Link></NavbarItem>
 
