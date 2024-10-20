@@ -1,48 +1,47 @@
 import React from 'react';
 import Image from 'next/image';
-import image1 from '../../../assets/client image/image-1.png';
-import image2 from '../../../assets/client image/image-2.png';
-import image3 from '../../../assets/client image/image-3.png';
-import image4 from '../../../assets/client image/image-4.png';
-import image5 from '../../../assets/client image/image-5.png';
-import image6 from '../../../assets/client image/image6.gif';
+import image1 from '../../../assets/client image/client-1.png';
+import image2 from '../../../assets/client image/client-2.png';
+import image3 from '../../../assets/client image/client-3.png';
+import image4 from '../../../assets/client image/client-4.png';
+import image5 from '../../../assets/client image/client-5.png';
+import image6 from '../../../assets/client image/client-6.png';
+import image7 from '../../../assets/client image/client-7.png';
+import image8 from '../../../assets/client image/client-8.png';
+import image9 from '../../../assets/client image/client-9.png';
 
 const OurClient = () => {
     return (
         <div className='mt-10'>
             {/* Title Section */}
             <div className='my-5'>
-                <h2 className="lg:text-4xl md:text-3xl sm:text-2xl text-2xl text-center py-2 relative">
+                <p className='uppercase text-center text-[var(--color-secondary)] py-2 text-xl font-semibold'>Trusted By Over 1500</p>
+                <h2 className="lg:text-4xl md:text-3xl sm:text-2xl text-2xl text-center py-2 font-bold text-[#404040]">
                     OUR CLIENTS
-                    <span className="block w-14 h-1 bg-[#4a3989] absolute bottom-0 left-1/2 transform -translate-x-1/2 mt-1"></span>
                 </h2>
-                <p className='lg:text-xl md:text-xl sm:text-xs text-xs text-[#4a3989] text-center mt-3'>
-                    GET IN TOUCH
-                </p>
             </div>
 
             {/* Image Grid Section */}
-            <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-5 justify-items-center px-4">
+            <div className="flex flex-wrap justify-center gap-3 px-6">
                 {/* Image 1 */}
                 <div className="flex justify-center items-center">
                     <Image 
                         src={image1} 
                         alt="Client 1" 
-                        width={200}          
-                        height={200}         
-                        className="rounded-lg transition-transform transform hover:scale-105" 
+                        width={150}          
+                        height={150}         
+                        className="rounded-lg border border-gray-300 shadow-lg " 
                     />
                 </div>
 
                 {/* Image 2 */}
-
                 <div className="flex justify-center items-center">
                     <Image 
                         src={image5} 
                         alt="Client 5" 
-                        width={200}
-                        height={200}
-                        className="rounded-lg transition-transform transform hover:scale-105" 
+                        width={150}
+                        height={150}
+                        className="rounded-lg border border-gray-300 shadow-lg " 
                     />
                 </div>
 
@@ -51,9 +50,9 @@ const OurClient = () => {
                     <Image 
                         src={image3} 
                         alt="Client 3" 
-                        width={200}
-                        height={200}
-                        className="rounded-lg transition-transform transform hover:scale-105" 
+                        width={150}
+                        height={150}
+                        className="rounded-lg border border-gray-300 shadow-lg " 
                     />
                 </div>
 
@@ -62,9 +61,9 @@ const OurClient = () => {
                     <Image 
                         src={image4} 
                         alt="Client 4" 
-                        width={200}
-                        height={200}
-                        className="rounded-lg transition-transform transform hover:scale-105" 
+                        width={150}
+                        height={150}
+                        className="rounded-lg border border-gray-300 shadow-lg " 
                     />
                 </div>
 
@@ -73,9 +72,9 @@ const OurClient = () => {
                     <Image 
                         src={image2} 
                         alt="Client 2" 
-                        width={200}
-                        height={200}
-                        className="rounded-lg transition-transform transform hover:scale-105" 
+                        width={150}
+                        height={150}
+                        className="rounded-lg border border-gray-300 shadow-lg " 
                     />
                 </div>
 
@@ -86,7 +85,40 @@ const OurClient = () => {
                         alt="Client 6" 
                         width={150}
                         height={150}
-                        className="rounded-lg transition-transform transform hover:scale-105" 
+                        className="rounded-lg border border-gray-300 shadow-lg " 
+                    />
+                </div>
+
+                {/* Image 7 */}
+                <div className="flex justify-center items-center">
+                    <Image 
+                        src={image7} 
+                        alt="Client 7" 
+                        width={150}
+                        height={150}
+                        className="rounded-lg border border-gray-300 shadow-lg " 
+                    />
+                </div>
+
+                {/* Image 8 */}
+                <div className="flex justify-center items-center">
+                    <Image 
+                        src={image8} 
+                        alt="Client 8" 
+                        width={150}
+                        height={150}
+                        className="rounded-lg border border-gray-300 shadow-lg " 
+                    />
+                </div>
+
+                {/* Image 9 */}
+                <div className="flex justify-center items-center">
+                    <Image 
+                        src={image9} 
+                        alt="Client 9" 
+                        width={150}
+                        height={150}
+                        className="rounded-lg border border-gray-300 shadow-lg " 
                     />
                 </div>
             </div>
