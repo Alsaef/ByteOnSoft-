@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`font-rubik ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar/>
        <div className="min-h-screen">

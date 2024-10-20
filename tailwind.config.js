@@ -8,6 +8,9 @@ const config  = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif'], // Add Rubik to Tailwind configuration
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
