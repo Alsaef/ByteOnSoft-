@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const FinalHero = () => {
     return (
-        <div className='bg-custom-gradient h-full py-14 relative'>
+        <div className='bg-gradient-to-b from-[#063D97] to-[#0060B1] h-full py-14 relative'>
             {/* Main Content Section */}
             <div className='flex lg:flex-row md:flex-row sm:flex-col flex-col items-center justify-around px-5 gap-3 relative z-10'>
                 {/* Text Section */}

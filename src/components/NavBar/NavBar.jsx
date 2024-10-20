@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import logo from '../../assets/logo/logo.jpg';
 import {
     Navbar,
@@ -13,30 +14,64 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const NavBar = () => {
-    const navItem = <>
+    const [isScrolled, setIsScrolled] = useState(false);
 
-        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/'>Home</Link></NavbarItem>
-        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/about'>About Us</Link></NavbarItem>
-        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/services'>Services</Link></NavbarItem>
-        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/career'>Career</Link></NavbarItem>
-        <NavbarItem className="hover:text-blue-500 cursor-pointer uppercase"><Link href='/contact'>Contact</Link></NavbarItem>
+    useEffect(() => {
+        // Check if 'window' is available and add scroll listener
+        const handleScroll = () => {
+            if (window.scrollY > 50) {  // Adjust the scroll threshold if needed
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
 
-    </>
+        // Ensure that the scroll detection is client-side
+        if (typeof window !== "undefined") {
+            window.addEventListener('scroll', handleScroll);
+        }
+
+        // Cleanup function to remove the listener when the component unmounts
+        return () => {
+            if (typeof window !== "undefined") {
+                window.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, []);
+
+    const navItem = (
+        <>
+            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
+                <Link href='/'>Home</Link>
+            </NavbarItem>
+            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
+                <Link href='/about'>About Us</Link>
+            </NavbarItem>
+            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
+                <Link href='/services'>Services</Link>
+            </NavbarItem>
+            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
+                <Link href='/career'>Career</Link>
+            </NavbarItem>
+            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
+                <Link href='/contact'>Contact</Link>
+            </NavbarItem>
+        </>
+    );
+
     return (
-        <nav className="bg-white shadow-sm">
-            <Navbar>
+      
+            <Navbar className={` sticky top-0 z-20 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg border-0 text-black' : 'bg-[#063D97] border-0 text-white'}`}>
                 <NavbarContainer className="flex items-center justify-between w-[95.5%] mx-auto">
                     <NavbarBrand>
-
                         <Image
                             src={logo}
-                            width={45}     
-                            height={0}    
+                            width={45}
+                            height={0}
                             alt="Logo"
                             loading="lazy"
-                            className="h-auto"
+                            className="h-auto rounded-full"
                         />
-
                     </NavbarBrand>
 
                     {/* Desktop Menu */}
@@ -44,18 +79,18 @@ const NavBar = () => {
                         {navItem}
                     </NavbarList>
 
-                    {/* Mobile Menu Button */}
+                   
                     <NavbarCollapseBtn />
 
-                    {/* Mobile Menu */}
+                  
                     <NavbarCollapse className="md:hidden">
-                        <NavbarList className="flex flex-col space-y-3 text-base mt-3">
+                        <NavbarList className="flex flex-col space-y-3 text-black  mt-3">
                             {navItem}
                         </NavbarList>
                     </NavbarCollapse>
                 </NavbarContainer>
             </Navbar>
-        </nav>
+       
     );
 };
 
