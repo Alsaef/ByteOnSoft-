@@ -10,7 +10,7 @@ const WhyTrustUs = () => {
             </div>
             <div className='text-left md:px-3 px-4'>
                 <p className='uppercase  text-[var(--color-secondary)] py-2 text-xl font-semibold'>Why Trust Us?</p>
-                <h2 className='text-3xl font-semibold text-[#404040]'>Achieve Digital Transformation For <br /> Your Retail Business Services</h2>
+                <h2 className='text-2xl md:text-3xl font-semibold text-[#404040]'>Achieve Digital Transformation For <br /> Your Retail Business Services</h2>
                 <p className='py-7  font-light'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br /> incididunt ut labore et dolore magna aliqua.</p>
                 <ul className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-3">
                     <li className="relative before:absolute before:z-[-1] before:left-0 before:bottom-0 before:w-0 before:h-full before:rounded before:bg-[var(--color-primary)] before:transition-all before:duration-500 hover:before:w-full shadow-lg p-4 rounded-lg hover:text-white transition-all border-l-2 border-[var(--color-primary)]">

@@ -7,8 +7,8 @@ const FinalHero = () => {
     return (
         <div className='bg-custom-gradient lg:bg-none h-full pb-10 md:pb-4 lg:pb-14 pt-24 relative mb-16'>
 
-            <div className='hidden  lg:block absolute  w-full h-full top-0'>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" version="1.1">
+            <div className='hidden lg:block absolute  w-full h-full top-0'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" version="1.1">
                     <defs>
                         <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" style={{ stopColor: 'rgba(0,0,36,1)', stopOpacity: 1 }} />
@@ -60,7 +60,7 @@ const FinalHero = () => {
             </div>
 
             {/* Bottom Image */}
-            <div className='absolute lg:hidden block bottom-1'>
+            <div className='absolute lg:hidden -bottom-1'>
                 <Image 
                     src={HomeBottom}
                     width={500}
