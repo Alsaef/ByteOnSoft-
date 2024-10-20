@@ -1,17 +1,21 @@
 import ContactHome from '@/components/UI/Contact-Home/ContactHome';
-import DoProjects from '@/components/UI/DoProjects/DoProjects';
-import FinalHero from '@/components/UI/Hero/FinalHero';
+
+import Hero from '@/components/UI/Hero/Hero';
+
 import OurClient from '@/components/UI/OurClient/OurClient';
 import OurService from '@/components/UI/OurService/OurService';
 import Performance from '@/components/UI/Performance/Performance';
 import Testimonials from '@/components/UI/Testimonials/Testimonials';
+import WhyChooseUs from '@/components/UI/WhyChooseUs/WhyChooseUs';
+import WhyTrustUs from '@/components/UI/WhyTrustUs/WhyTrustUs';
 
 export default function Home() {
   return (
     <div>
      <FinalHero></FinalHero>
      <OurService></OurService>
-     <DoProjects></DoProjects>
+     <WhyChooseUs></WhyChooseUs>
+     <WhyTrustUs/>
      <Performance></Performance>
      <OurClient></OurClient>
      <ContactHome></ContactHome>
