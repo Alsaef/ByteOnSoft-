@@ -12,11 +12,11 @@ import image9 from '../../../assets/client image/client-9.png';
 
 const OurClient = () => {
     return (
-        <div className='mt-10'>
+        <div className='mt-10 w-full md:w-4/5 mx-auto'>
             {/* Title Section */}
             <div className='my-5'>
-                <p className='uppercase text-center text-[var(--color-secondary)] py-2 text-xl font-semibold'>Trusted By Over 1500</p>
-                <h2 className="lg:text-4xl md:text-3xl sm:text-2xl text-2xl text-center py-2 font-bold text-[#404040]">
+                <p className='uppercase text-center text-[var(--color-secondary)] py-2 text-lg font-semibold'>Trusted By Over 1500</p>
+                <h2 className="text-2xl md:text-3xl text-center py-2 font-bold text-[#404040]">
                     OUR CLIENTS
                 </h2>
             </div>
