@@ -8,6 +8,9 @@ const config  = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(0deg, rgba(0,212,255,1) 0%, rgba(2,0,36,1) 100%)',
+      },
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'], // Add Rubik to Tailwind configuration
       },
