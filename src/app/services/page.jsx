@@ -1,10 +1,10 @@
 import React from 'react';
-import webDevelopmentImage from '../../assets/service image/web-development.png'
-import wordPressDevelopmentImage from '../../assets/service image/WordPress-development.png'
-import ECommerceDevelopmentImage from '../../assets/service image/E-Commerce_Development.png'
-import mobileAppDevelopmentImage from '../../assets/service image/Mobile_App_Development.png'
-import UIUXDesignImage from '../../assets/service image/UI_UX_Design.png'
-import customSoftwareDevelopmentImage from '../../assets/service image/Custom_Software_development.png'
+import webDevelopmentImage from '../../assets/service image/website-codes (2).png'
+import wordPressDevelopmentImage from '../../assets/service image/social.png'
+import ECommerceDevelopmentImage from '../../assets/service image/ecommerce.png'
+import mobileAppDevelopmentImage from '../../assets/service image/mobile-app (2).png'
+import UIUXDesignImage from '../../assets/service image/mobile-app (2).png'
+import customSoftwareDevelopmentImage from '../../assets/service image/coding (1).png'
 import ServiceCard from '@/components/Card/ServiceCard';
 
 
