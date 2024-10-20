@@ -1,5 +1,7 @@
 import ContactHome from '@/components/UI/Contact-Home/ContactHome';
+
 import Hero from '@/components/UI/Hero/Hero';
+
 import OurClient from '@/components/UI/OurClient/OurClient';
 import OurService from '@/components/UI/OurService/OurService';
 import Performance from '@/components/UI/Performance/Performance';
@@ -10,7 +12,7 @@ import WhyTrustUs from '@/components/UI/WhyTrustUs/WhyTrustUs';
 export default function Home() {
   return (
     <div>
-     <Hero></Hero>
+     <FinalHero></FinalHero>
      <OurService></OurService>
      <WhyChooseUs></WhyChooseUs>
      <WhyTrustUs/>
