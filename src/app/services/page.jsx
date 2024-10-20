@@ -3,7 +3,7 @@ import webDevelopmentImage from '../../assets/service image/website-codes (2).pn
 import wordPressDevelopmentImage from '../../assets/service image/social.png'
 import ECommerceDevelopmentImage from '../../assets/service image/ecommerce.png'
 import mobileAppDevelopmentImage from '../../assets/service image/mobile-app (2).png'
-import UIUXDesignImage from '../../assets/service image/mobile-app (2).png'
+import UIUXDesignImage from '../../assets/service image/ui.png'
 import customSoftwareDevelopmentImage from '../../assets/service image/coding (1).png'
 import ServiceCard from '@/components/Card/ServiceCard';
 
