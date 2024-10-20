@@ -98,7 +98,7 @@ const NavBar = () => {
     );
 
     return (
-        <nav>
+      
             <Navbar
                 className={`fixed z-50 border-none w-full px-5 transition-colors duration-300 font-semibold ${isScrolled
                         ? "bg-white text-[var(--color-primary)] shadow-xl"
@@ -113,7 +113,7 @@ const NavBar = () => {
                             height={0}
                             alt="Logo"
                             loading="lazy"
-                            className="h-auto"
+                            className="h-auto rounded-full"
                         />
                     </NavbarBrand>
 
@@ -122,7 +122,7 @@ const NavBar = () => {
                         {navItemDesktop}
                     </NavbarList>
 
-                    {/* Mobile Menu Button */}
+                   
                     <NavbarCollapseBtn />
 
                     {/* Mobile Menu */}
@@ -133,8 +133,8 @@ const NavBar = () => {
                     </NavbarCollapse>
                 </NavbarContainer>
             </Navbar>
-        </nav>
+       
     );
 };
 
-export default NavBar;
+ export default NavBar;
