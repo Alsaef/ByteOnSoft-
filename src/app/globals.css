@@ -2,3 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* global.css or _app.js (import this file) */
+:root {
+    --color-primary: #7b68ee;
+    --color-secondary: #ff9800;
+  }
+  
