@@ -1,6 +1,6 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import logo from '../../assets/logo/logo.jpg';
+"use client";
+
+import logo from "../../assets/logo/logo.jpg";
 import {
     Navbar,
     NavbarBrand,
@@ -9,60 +9,103 @@ import {
     NavbarContainer,
     NavbarItem,
     NavbarList,
-} from 'keep-react';
-import Image from 'next/image';
-import Link from 'next/link';
+} from "keep-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        // Check if 'window' is available and add scroll listener
         const handleScroll = () => {
-            if (window.scrollY > 50) {  // Adjust the scroll threshold if needed
+            if (window.scrollY > 100) {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
             }
         };
 
-        // Ensure that the scroll detection is client-side
-        if (typeof window !== "undefined") {
-            window.addEventListener('scroll', handleScroll);
-        }
-
-        // Cleanup function to remove the listener when the component unmounts
+        window.addEventListener("scroll", handleScroll);
         return () => {
-            if (typeof window !== "undefined") {
-                window.removeEventListener('scroll', handleScroll);
-            }
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
-    const navItem = (
-        <>
-            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
-                <Link href='/'>Home</Link>
-            </NavbarItem>
-            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
-                <Link href='/about'>About Us</Link>
-            </NavbarItem>
-            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
-                <Link href='/services'>Services</Link>
-            </NavbarItem>
-            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
-                <Link href='/career'>Career</Link>
-            </NavbarItem>
-            <NavbarItem className={`cursor-pointer uppercase  ${isScrolled ? ' text-black' : ' text-white'}text-black`}>
-                <Link href='/contact'>Contact</Link>
-            </NavbarItem>
-        </>
+    const navItemDesktop = (
+        <ul className="flex flex-col justify-start items-start md:flex-row md:justify-center md:items-center space-x-8 lg:space-x-10">
+            <li
+                className={`hover:border-b-2 border-primary cursor-pointer uppercase ${isScrolled ? "text-[var(--color-primary)]" : "text-white"
+                    }`}
+            >
+                <Link href="/">Home</Link>
+            </li>
+            <li
+                className={`hover:border-b-2 border-primary cursor-pointer uppercase ${isScrolled ? "text-[var(--color-primary)]" : "text-white"
+                    }`}
+            >
+                <Link href="/about">About Us</Link>
+            </li>
+            <li
+                className={`hover:border-b-2 border-primary cursor-pointer uppercase ${isScrolled ? "text-[var(--color-primary)]" : "text-white"
+                    }`}
+            >
+                <Link href="/services">Services</Link>
+            </li>
+            <li
+                className={`hover:border-b-2 border-primary cursor-pointer uppercase ${isScrolled ? "text-[var(--color-primary)]" : "text-white"
+                    }`}
+            >
+                <Link href="/career">Career</Link>
+            </li>
+            <li
+                className={`hover:border-b-2 border-primary cursor-pointer uppercase ${isScrolled ? "text-[var(--color-primary)]" : "text-white"
+                    }`}
+            >
+                <Link href="/contact">Contact</Link>
+            </li>
+        </ul>
+    );
+
+    const navItemMobile = (
+        <ul className="flex flex-col justify-start items-start flex-grow-0 space-x-0 w-full">
+            <li
+                className={`pb-3 border-b-[1px] border-black w-full uppercase bg-white text-[var(--color-primary)]`}
+            >
+                <Link href="/">Home</Link>
+            </li>
+            <li
+                className={`py-3 border-b-[1px] border-black w-full uppercase bg-white text-[var(--color-primary)]`}
+            >
+                <Link href="/about">About Us</Link>
+            </li>
+            <li
+                className={`py-3 border-b-[1px] border-black w-full uppercase bg-white text-[var(--color-primary)]`}
+            >
+                <Link href="/services">Services</Link>
+            </li>
+            <li
+                className={`py-3 border-b-[1px] border-black w-full uppercase bg-white text-[var(--color-primary)]`}
+            >
+                <Link href="/career">Career</Link>
+            </li>
+            <li
+                className={`py-3 border-b-[1px] border-black w-full uppercase bg-white text-[var(--color-primary)]`}
+            >
+                <Link href="/contact">Contact</Link>
+            </li>
+        </ul>
     );
 
     return (
       
-            <Navbar className={` sticky top-0 z-20 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg border-0 text-black' : 'bg-[#063D97] border-0 text-white'}`}>
-                <NavbarContainer className="flex items-center justify-between w-[95.5%] mx-auto">
+            <Navbar
+                className={`fixed z-50 border-none w-full px-5 transition-colors duration-300 font-semibold ${isScrolled
+                        ? "bg-white text-[var(--color-primary)] shadow-xl"
+                        : "bg-transparent text-white"
+                    }`}
+            >
+                <NavbarContainer className="flex items-center justify-between w-full mx-auto">
                     <NavbarBrand>
                         <Image
                             src={logo}
@@ -75,17 +118,17 @@ const NavBar = () => {
                     </NavbarBrand>
 
                     {/* Desktop Menu */}
-                    <NavbarList className="hidden md:flex space-x-6 text-base">
-                        {navItem}
+                    <NavbarList className="hidden lg:flex space-x-6 text-base">
+                        {navItemDesktop}
                     </NavbarList>
 
                    
                     <NavbarCollapseBtn />
 
-                  
-                    <NavbarCollapse className="md:hidden">
-                        <NavbarList className="flex flex-col space-y-3 text-black  mt-3">
-                            {navItem}
+                    {/* Mobile Menu */}
+                    <NavbarCollapse className="lg:hidden sm:w-full">
+                        <NavbarList className="flex flex-col justify-start items-start space-y-3 w-full text-base mt-3">
+                            {navItemMobile}
                         </NavbarList>
                     </NavbarCollapse>
                 </NavbarContainer>
@@ -94,4 +137,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+ export default NavBar;

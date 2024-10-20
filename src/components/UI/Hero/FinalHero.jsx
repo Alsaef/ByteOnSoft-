@@ -5,7 +5,28 @@ import Image from 'next/image';
 
 const FinalHero = () => {
     return (
-        <div className='bg-gradient-to-b from-[#063D97] to-[#0060B1] h-full py-14 relative'>
+        <div className='bg-custom-gradient lg:bg-none h-full pb-10 md:pb-4 lg:pb-14 pt-24 relative mb-16'>
+
+            <div className='hidden  lg:block absolute  w-full h-full top-0'>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" version="1.1">
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style={{ stopColor: 'rgba(0,0,36,1)', stopOpacity: 1 }} />
+                            <stop offset="100%" style={{ stopColor: 'rgba(0,212,255,1)', stopOpacity: 1 }} />
+                        </linearGradient>
+                    </defs>
+                    <path
+                        fill="url(#gradient1)"
+                        strokeLinecap="round"
+                        strokeLinejoin="miter"
+                        fillOpacity="1"
+                        d="M0 437L25 419.5C50 402 100 367 150 358C200 349 250 366 300 373.2C350 380.3 400 377.7 450 339C500 300.3 550 225.7 600 207.2C650 188.7 700 226.3 750 236.3C800 246.3 850 228.7 875 219.8L900 211L900 0L875 0C850 0 800 0 750 0C700 0 650 0 600 0C550 0 500 0 450 0C400 0 350 0 300 0C250 0 200 0 150 0C100 0 50 0 25 0L0 0Z"
+                    />
+                </svg>
+            </div>
+
+
+
             {/* Main Content Section */}
             <div className='flex lg:flex-row md:flex-row sm:flex-col flex-col items-center justify-around px-5 gap-3 relative z-10'>
                 {/* Text Section */}
@@ -39,11 +60,11 @@ const FinalHero = () => {
             </div>
 
             {/* Bottom Image */}
-            <div className='absolute lg:top-[4.5in] md:top-[4.5in] sm:bottom-0 bottom-0 w-full z-0'>
+            <div className='absolute lg:hidden block bottom-1'>
                 <Image 
                     src={HomeBottom}
-                    width={600}
-                    height={600}
+                    width={500}
+                    height={500}
                     className='w-screen'
                     alt="Bottom shape image"
                 />
