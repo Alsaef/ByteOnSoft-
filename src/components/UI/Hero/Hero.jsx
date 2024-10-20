@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 const Hero = () => {
     return (
+
         <div>
             <div className="overflow-hidden">
                 <div
