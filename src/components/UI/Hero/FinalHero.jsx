@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const FinalHero = () => {
     return (
-        <div className='bg-custom-gradient h-full py-14 relative'>
+        <div className='bg-custom-gradient relative pt-[100px] mb-16'>
             {/* Main Content Section */}
             <div className='flex lg:flex-row md:flex-row sm:flex-col flex-col items-center justify-around px-5 gap-3 relative z-10'>
                 {/* Text Section */}
@@ -38,16 +38,16 @@ const FinalHero = () => {
                 </div>
             </div>
 
-            {/* Bottom Image */}
-            <div className='absolute lg:top-[4.5in] md:top-[4.5in] sm:bottom-0 bottom-0 w-full z-0'>
+            {/* Bottom Image
+            <div className=' '>
                 <Image 
                     src={HomeBottom}
-                    width={600}
-                    height={600}
+                    width={500}
+                    height={500}
                     className='w-screen'
                     alt="Bottom shape image"
                 />
-            </div>
+            </div> */}
         </div>
     );
 };

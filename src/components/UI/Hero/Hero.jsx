@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Hero = () => {
     return (
 
-        <div>
+
             <div className="overflow-hidden">
                 <div
                     className="h-[540px] bg-fixed bg-cover bg-center flex flex-col items-center justify-center"
@@ -27,7 +27,6 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 
