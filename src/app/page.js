@@ -1,6 +1,7 @@
 import ContactHome from '@/components/UI/Contact-Home/ContactHome';
+import FinalHero from '@/components/UI/Hero/FinalHero';
 
-import Hero from '@/components/UI/Hero/Hero';
+
 
 import OurClient from '@/components/UI/OurClient/OurClient';
 import OurService from '@/components/UI/OurService/OurService';
