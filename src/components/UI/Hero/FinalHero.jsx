@@ -39,7 +39,7 @@ const FinalHero = () => {
             </div>
 
             {/* Bottom Image */}
-            <div className='absolute top-[4.5in] w-full z-0'>
+            <div className='absolute lg:top-[4.5in] md:top-[4.5in] sm:bottom-0 bottom-0 w-full z-0'>
                 <Image 
                     src={HomeBottom}
                     width={600}
