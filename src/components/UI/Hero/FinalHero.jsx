@@ -56,10 +56,10 @@ const FinalHero = () => {
                         <br /> magna aliqua, magna aliqua. ipsum is simply dummy text of the printing.
                     </p>
                     <div className='flex items-center justify-center lg:justify-start gap-3'>
-                        <button className='bg-white py-3 px-3 text-[var(--color-primary)] rounded-lg font-semibold hover:bg-[var(--color-primary)] hover:text-white'>
+                        <button className='bg-white py-3 px-3 text-[var(--color-secondary)] rounded-lg font-semibold hover:bg-[var(--color-secondary)] hover:text-white transition duration-500'>
                             Our Service
                         </button>
-                        <button className='bg-[var(--color-primary)] py-3 px-3 text-white rounded-lg font-semibold hover:text-[var(--color-primary)] hover:bg-white'>
+                        <button className='bg-[var(--color-secondary)] py-3 px-3 text-white rounded-lg font-semibold hover:text-[var(--color-secondary)] hover:bg-white transition duration-500'>
                             Contact Us
                         </button>
                     </div>

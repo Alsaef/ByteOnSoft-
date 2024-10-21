@@ -111,7 +111,7 @@ const NavBar = () => {
                         <Image
                             src={logo}
                             width={150}
-                            height={100}
+                            height={150}
                             alt="Logo"
                             loading="lazy"
                             className="h-auto rounded-full"
@@ -122,7 +122,8 @@ const NavBar = () => {
                     <NavbarList className="hidden lg:flex space-x-6 text-base">
                         {navItemDesktop}
                     </NavbarList>
-                    <button className="font-rubik hidden lg:flex font-semibold text-lg rounded-lg bg-[var(--color-primary)] px-5 py-3 text-white flex-row justify-center items-center">
+
+                    <button className="font-rubik hidden lg:flex font-semibold text-lg rounded-lg bg-[var(--color-primary)] hover:bg-[Var(--color-secondary)] transition duration-500 px-5 py-3 text-white flex-row justify-center items-center">
                         <MdCall className="w-6 h-6 text-white mr-2"/>
                         <span>CALL US</span>
                     </button>
