@@ -4,7 +4,7 @@ const Performance = () => {
         <div className='my-16 w-full'>
             <div className="overflow-hidden">
                 <div
-                    className="lg:h-[200px] h-full py-6 bg-fixed bg-cover bg-center flex flex-col items-center justify-center bg-[#3B5189]"
+                    className="lg:h-[300px] h-full py-6 bg-fixed bg-cover bg-center flex flex-col items-center justify-center bg-[#3B5189]"
                     style={{ backgroundImage: `url('https://i.ibb.co.com/JCMzWJb/banner-bg.jpg')` }}
                 >
 
