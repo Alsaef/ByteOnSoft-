@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Logo from '../../assets/logo/logo.jpg';
-import Link from 'next/link';
+
 
 
 
@@ -14,7 +14,7 @@ export const metadata = {
 const AboutPage = () => {
     return (
       <div>
-        
+
       </div>
     );
 };
