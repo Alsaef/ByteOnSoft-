@@ -102,7 +102,7 @@ const NavBar = () => {
             <Navbar
                 className={`fixed z-50 border-none w-full px-5  transition-colors duration-300 font-semibold ${isScrolled
                         ? "bg-white text-[var(--color-primary)] shadow-xl"
-                        : "bg-transparent text-white"
+                        : "bg-transparent text-white shadow-xl"
                     }`}
             >
                 <NavbarContainer className="flex items-center justify-between w-full mx-auto">

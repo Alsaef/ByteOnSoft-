@@ -17,12 +17,16 @@ import mobileAppDevelopmentImage from '../../../assets/service image/mobile-app 
 import UIUXDesignImage from '../../../assets/service image/ui.png'
 import customSoftwareDevelopmentImage from '../../../assets/service image/coding (1).png'
 import ServiceCard from '@/components/Card/ServiceCard';
+import SectionTitle from '@/components/SectionTitle/SectionTitle';
 
 const OurService = () => {
   return (
     <div className='text-center mx-auto w-full md:w-4/5 p-5 md:p-10 lg:p-16'>
-      <h1 className='uppercase  text-[var(--color-secondary)] py-2 text-xl font-semibold'>OUR SERVICES</h1>
-      <h2 className='text-2xl md:text-3xl font-semibold text-[#404040] mb-5'>Safeguard Your Brand with Cyber Security and IT Solutions</h2>
+      <SectionTitle
+      heading={'Our Services'}
+      subHeading={'Safeguard Your Brand with Cyber Security and IT Solutions'}
+      />
+
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         <ServiceCard title={'Web Design and Development'} image={webDevelopmentImage} description={'Website design and development combine aesthetics and functionality to create engaging, user-friendly websites. Design focuses on layout, color, and user experience, while development involves coding to ensure responsiveness, performance, and accessibility. Together, they build websites that work seamlessly across devices and meet user and business needs.'} />
         <ServiceCard title={'WordPress Development'} image={wordPressDevelopmentImage} description={'WordPress development involves building and customizing websites using the WordPress platform. It includes creating themes, plugins, and integrating features to enhance functionality. WordPress development allows for flexible, user-friendly, and scalable websites, making it ideal for blogs, e-commerce, and various business websites, all with minimal coding required.'} />
