@@ -1,18 +1,19 @@
+"use client"
+
 import React from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Parallax } from 'swiper/modules';
 
-import Image from 'next/image';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
+// Import Swiper styles
+import 'swiper/css';
 
-import image1 from '../../../assets/client-review-image/c87497aa55_M.rony_.png';
-import image2 from '../../../assets/client-review-image/Frame-39970.png';
-import image3 from '../../../assets/client-review-image/Frame-39971.png';
-import { Rating } from '@smastrom/react-rating';
-import '@smastrom/react-rating/style.css'
+import image1 from '../../../assets/client-review-image/person-1.webp';
+import SwiperCard from '@/components/Card/SwiperCard';
 
 const Testimonials = () => {
     return (
-        <div className="mt-10 w-full md:w-4/5 mx-auto">
+        <div className="mt-10 w-11/12 md:w-4/5 mx-auto">
             {/* Heading Section */}
             <div className="my-5 text-center">
                 <h2 className="text-[var(--color-secondary)] font-semibold text-lg py-2 relative uppercase">
@@ -23,21 +24,89 @@ const Testimonials = () => {
                 </p>
             </div>
 
-            {/* Carousel Section */}
-            {/* <Carousel>
-                <div>
-                    <img src={image1} />
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src={image2} />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src={image3} />
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel> */}
+            {/* Swiper Section */}
+            <Swiper
+            modules={[Autoplay,Parallax]}
+                spaceBetween={50}
+                slidesPerView={3}
+                autoplay={{ 
+                    delay: 3000, // delay between slides
+                    pauseOnMouseEnter: true, // pause on hover
+                }}
+                parallax
+                breakpoints={{
+                    // when the window width is >= 640px
+                    350: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    // when the window width is >= 768px
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    // when the window width is >= 1024px
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                }}
+            >
+                <SwiperSlide>
+                    <SwiperCard 
+                    image={image1} 
+                    name={'Jhon Doe'} 
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet nemo veritatis, possimus quam aliquid voluptates sunt voluptatibus veniam. Suscipit dicta debitis ea quisquam neque reprehenderit porro libero harum. Eos?'}
+                    location={'Baridhara, Dhaka'}
+                    rating={4}
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SwiperCard 
+                    image={image1} 
+                    name={'Jhon Doe'} 
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet nemo veritatis, possimus quam aliquid voluptates sunt voluptatibus veniam. Suscipit dicta debitis ea quisquam neque reprehenderit porro libero harum. Eos?'}
+                    location={'Baridhara, Dhaka'}
+                    rating={4}
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SwiperCard 
+                    image={image1} 
+                    name={'Jhon Doe'} 
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet nemo veritatis, possimus quam aliquid voluptates sunt voluptatibus veniam. Suscipit dicta debitis ea quisquam neque reprehenderit porro libero harum. Eos?'}
+                    location={'Baridhara, Dhaka'}
+                    rating={4}
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SwiperCard 
+                    image={image1} 
+                    name={'Jhon Doe'} 
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet nemo veritatis, possimus quam aliquid voluptates sunt voluptatibus veniam. Suscipit dicta debitis ea quisquam neque reprehenderit porro libero harum. Eos?'}
+                    location={'Baridhara, Dhaka'}
+                    rating={4}
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SwiperCard 
+                    image={image1} 
+                    name={'Jhon Doe'} 
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet nemo veritatis, possimus quam aliquid voluptates sunt voluptatibus veniam. Suscipit dicta debitis ea quisquam neque reprehenderit porro libero harum. Eos?'}
+                    location={'Baridhara, Dhaka'}
+                    rating={4}
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SwiperCard 
+                    image={image1} 
+                    name={'Jhon Doe'} 
+                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet nemo veritatis, possimus quam aliquid voluptates sunt voluptatibus veniam. Suscipit dicta debitis ea quisquam neque reprehenderit porro libero harum. Eos?'}
+                    location={'Baridhara, Dhaka'}
+                    rating={4}
+                    />
+                </SwiperSlide>
+            </Swiper>
         </div>
     );
 };
