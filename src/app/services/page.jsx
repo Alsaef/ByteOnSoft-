@@ -12,8 +12,8 @@ import PageIttle from '@/components/PageItile/PageIttle';
 
 
 export const metadata = {
-    title: "SERVICES | IT PORI",
-    description: " IT PORI specializes in web development, UX/UI design, and  software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
+    title: "SERVICES | ByteOnSoft",
+    description: " ByteOnSoft specializes in web development, UX/UI design, and  software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
   };
 
 
