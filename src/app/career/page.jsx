@@ -1,9 +1,14 @@
+import PageIttle from '@/components/PageItile/PageIttle';
 import React from 'react';
-
+export const metadata = {
+    title: "CAREER | IT PORI",
+    description: "IT PORI specializes in web development, UX/UI design, and software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
+  };
+  
 const page = () => {
     return (
-        <div className='py-16'>
-           <h2>carrer page</h2> 
+        <div>
+           <PageIttle pageTitle={'Career'} pageSubTitle={'Career'}></PageIttle> 
         </div>
     );
 };
