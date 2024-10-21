@@ -1,28 +1,40 @@
-import ContactHome from '@/components/UI/Contact-Home/ContactHome';
-import FinalHero from '@/components/UI/Hero/FinalHero';
-
-
-
-import OurClient from '@/components/UI/OurClient/OurClient';
-import OurService from '@/components/UI/OurService/OurService';
-import Performance from '@/components/UI/Performance/Performance';
-import TeamMember from '@/components/UI/TeamMember/TeamMember';
-import Testimonials from '@/components/UI/Testimonials/Testimonials';
-import WhyChooseUs from '@/components/UI/WhyChooseUs/WhyChooseUs';
-import WhyTrustUs from '@/components/UI/WhyTrustUs/WhyTrustUs';
+import ContactHome from "@/components/UI/Contact-Home/ContactHome";
+import FinalHero from "@/components/UI/Hero/FinalHero";
+import { IoChatbox } from "react-icons/io5";
+import OurClient from "@/components/UI/OurClient/OurClient";
+import OurService from "@/components/UI/OurService/OurService";
+import Performance from "@/components/UI/Performance/Performance";
+import TeamMember from "@/components/UI/TeamMember/TeamMember";
+import Testimonials from "@/components/UI/Testimonials/Testimonials";
+import WhyChooseUs from "@/components/UI/WhyChooseUs/WhyChooseUs";
+import WhyTrustUs from "@/components/UI/WhyTrustUs/WhyTrustUs";
 
 export default function Home() {
   return (
-    <div>
-     <FinalHero></FinalHero>
-     <OurService></OurService>
-     <WhyChooseUs></WhyChooseUs>
-     <WhyTrustUs/>
-     <Performance></Performance>
-     <OurClient></OurClient>
-     <ContactHome></ContactHome>
-     <Testimonials></Testimonials>
-     <TeamMember/>
+    <div className="relative">
+      <FinalHero></FinalHero>
+      <OurService></OurService>
+      <WhyChooseUs></WhyChooseUs>
+      <WhyTrustUs />
+      <Performance></Performance>
+      <OurClient></OurClient>
+      <ContactHome></ContactHome>
+      <Testimonials></Testimonials>
+      <TeamMember />
+
+      <div className="fixed bottom-10 right-10">
+        <ChatButton />
+      </div>
     </div>
+  );
+}
+
+function ChatButton() {
+  "use client";
+
+  return (
+    <button className="bg-[var(--color-primary)] p-4 rounded-lg cursor-pointer">
+      <IoChatbox className="w-7 h-7 text-white"/>
+    </button>
   );
 }

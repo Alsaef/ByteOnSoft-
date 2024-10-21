@@ -5,7 +5,8 @@
 
 /* global.css or _app.js (import this file) */
 :root {
-    --color-primary: #7b68ee;
+    /* --color-primary: #7b68ee; */
+    --color-primary: #00b3f1;
     --color-secondary: #ff9800;
   }
   
