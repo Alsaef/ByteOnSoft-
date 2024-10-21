@@ -3,7 +3,7 @@ import React from 'react';
 
 const ContactHome = () => {
     return (
-        <div className='mt-16 bg-[#4a3989] py-8 md:py-12 '>
+        <div className='mt-16 bg-[var(--color-primary)] py-8 md:py-12 '>
              <div className='my-5'>
                 <h2 className="text-white lg:text-4xl md:text-3xl sm:text-2xl text-2xl text-center py-2 relative uppercase">
                 Schedule a free 30 minute meeting
