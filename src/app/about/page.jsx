@@ -20,8 +20,8 @@ import WorkingCard from '@/components/Card/WorkingCard';
 import OurClient from '@/components/UI/OurClient/OurClient';
 
 export const metadata = {
-  title: "ABOUT US | IT PORI",
-  description: "IT PORI specializes in web development, UX/UI design, and software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
+  title: "ABOUT US | ByteOnSoft",
+  description: "ByteOnSoft specializes in web development, UX/UI design, and software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
 };
 
 const AboutPage = () => {
