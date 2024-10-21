@@ -1,9 +1,26 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import HeroImage from '../../../assets/image2/home-font.png';
 import HomeBottom from '../../../assets/image2/home-bottom-shape.png';
 import Image from 'next/image';
 
 const FinalHero = () => {
+    const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
+
+    const handleMouseMove = (e) => {
+        // Get the size and position of the element
+        const { width, height, left, top } = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - left; // Get the X position within the element
+        const y = e.clientY - top;  // Get the Y position within the element
+        
+        // Calculate the rotation angles
+        const rotateY = ((x / width) * 30) - 15; // Rotate between -15deg to 15deg on Y axis
+        const rotateX = -((y / height) * 30) + 15; // Rotate between -15deg to 15deg on X axis
+
+        setRotation({ rotateX, rotateY });
+    };
+
     return (
         <div className='bg-custom-gradient lg:bg-none h-full pb-10 md:pb-4 lg:pb-14 pt-24 relative mb-16'>
 
@@ -49,8 +66,19 @@ const FinalHero = () => {
                 </div>
 
                 {/* Hero Image */}
-                <div className='relative z-10'>
-                    <Image 
+                <div
+                    className=""
+                    style={{
+                        willChange: 'transform',
+                        transform: `perspective(1000px) rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg) scale3d(1, 1, 1)`,
+                        transition: '300ms cubic-bezier(0.03, 0.98, 0.52, 0.99) '
+                    }}
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={() => {
+                        setRotation({ rotateX: 0, rotateY: 0 });
+                    }}
+                >
+                    <Image
                         src={HeroImage}
                         width={600}
                         height={600}
@@ -61,7 +89,7 @@ const FinalHero = () => {
 
             {/* Bottom Image */}
             <div className='absolute block lg:hidden -bottom-1'>
-                <Image 
+                <Image
                     src={HomeBottom}
                     width={500}
                     height={500}
