@@ -3,8 +3,8 @@ import React from 'react';
 
 const PageIttle = ({pageTitle,pageSubTitle}) => {
     return (
-        <div>
-            <div className="overflow-hidden">
+
+            <div className="overflow-hidden w-full">
                 <div
                     className="lg:h-[400px] md:h-[350px] sm:h-[300px] h-[230px]  w-full bg-cover bg-center flex flex-col items-center justify-center"
                     style={{ backgroundImage: `url('https://i.ibb.co.com/CP0Br5p/breadcrumb-bg-1.png')` }}
@@ -16,7 +16,7 @@ const PageIttle = ({pageTitle,pageSubTitle}) => {
                     </div>
                 </div>
             </div>
-        </div>
+
     );
 };
 

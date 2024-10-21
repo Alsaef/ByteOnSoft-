@@ -20,47 +20,48 @@ import WorkingCard from '@/components/Card/WorkingCard';
 import OurClient from '@/components/UI/OurClient/OurClient';
 
 export const metadata = {
-  title: "ABOUT US | IT PORI",
-  description: "IT PORI specializes in web development, UX/UI design, and software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
+  title: "ABOUT US | ByteOnSoft",
+  description: "ByteOnSoft specializes in web development, UX/UI design, and software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
 };
 
 const AboutPage = () => {
   return (
-    <div>
+    <>
       <PageIttle pageTitle={'About Us'} pageSubTitle={'about'}></PageIttle>
+      <div className='w-full'>
 
-      <div className='mt-28'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 py-8'>
-          <Card title={'Flexibility & Responsive'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature1} />
-          <Card title={'Dedicated Teams'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature2} />
-          <Card title={'Focusing on Business'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature3} />
+          <div className='w-11/12 md:w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 py-8 mt-20'>
+            <Card title={'Flexibility & Responsive'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature1} />
+            <Card title={'Dedicated Teams'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature2} />
+            <Card title={'Focusing on Business'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature3} />
+          </div>
+
+        <div className='mt-28'>
+          <Performance></Performance>
+        </div>
+        <div className='mt-28 w-11/12 md:w-4/5 mx-auto'>
+          <TeamMember></TeamMember>
+        </div>
+        <div className='mt-28 w-11/12 md:w-4/5 mx-auto'>
+          <SectionTitle
+            heading={'4 Step Work Process'}
+            subHeading={'Working Process'}
+          />
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 py-3'>
+            <WorkingCard title={'Discover'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess1} />
+            <WorkingCard title={'Design & Development'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess2} />
+            <WorkingCard title={'Install & Testing'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess3} />
+            <WorkingCard title={'Project Delivery'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess4} />
+          </div>
+
+        </div>
+        <div className='mt-28 w-11/12 md:w-4/5 mx-auto'>
+
+          <OurClient></OurClient>
+
         </div>
       </div>
-      <div className='mt-28'>
-        <Performance></Performance>
-      </div>
-      <div className='mt-28'>
-        <TeamMember></TeamMember>
-      </div>
-      <div className='mt-28'>
-        <SectionTitle
-          heading={'4 Step Work Process'}
-          subHeading={'Working Process'}
-        />
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 py-3'>
-          <WorkingCard title={'Discover'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess1} />
-          <WorkingCard title={'Design & Development'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess2} />
-          <WorkingCard title={'Install & Testing'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess3} />
-          <WorkingCard title={'Project Delivery'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess4} />
-        </div>
-
-      </div>
-      <div className='mt-28'>
-        
-        <OurClient></OurClient>
-
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -99,48 +99,50 @@ const NavBar = () => {
     );
 
     return (
-      
-            <Navbar
-                className={`fixed z-50 border-none w-full px-5  transition-colors duration-300 font-semibold ${isScrolled
-                        ? "bg-white text-[var(--color-primary)] shadow-xl"
-                        : "bg-transparent text-white shadow-xl"
-                    }`}
-            >
-                <NavbarContainer className="flex items-center justify-between w-full mx-auto">
-                    <NavbarBrand>
-                        <Image
-                            src={logo}
-                            width={150}
-                            height={150}
-                            alt="Logo"
-                            loading="lazy"
-                            className="h-auto rounded-full"
-                        />
-                    </NavbarBrand>
 
-                    {/* Desktop Menu */}
-                    <NavbarList className="hidden lg:flex space-x-6 text-base">
-                        {navItemDesktop}
+        <Navbar
+            className={`fixed z-50 border-none w-full px-5  transition-colors duration-300 font-semibold ${isScrolled
+                ? "bg-white text-[var(--color-primary)] shadow-xl"
+                : "bg-transparent text-white shadow-xl"
+                }`}
+        >
+            <NavbarContainer className="flex items-center justify-between w-full mx-auto">
+                <NavbarBrand>
+                    <Image
+                        src={logo}
+                        width={150}
+                        height={150}
+                        alt="Logo"
+                        loading="lazy"
+                        className="h-auto rounded-full"
+                    />
+                </NavbarBrand>
+
+                {/* Desktop Menu */}
+                <NavbarList className="hidden lg:flex space-x-6 text-base">
+                    {navItemDesktop}
+                </NavbarList>
+
+                <button className="relative font-rubik hidden lg:flex font-semibold text-lg rounded-lg bg-[var(--color-primary)] transition duration-500 px-5 py-3 text-white flex-row justify-center items-center overflow-hidden group">
+                    <span className="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)] transform translate-x-[-100%] transition-transform duration-500 group-hover:translate-x-0"></span>
+                    <MdCall className="w-6 h-6 text-white mr-2 relative z-10" />
+                    <span className="relative z-10">CALL US</span>
+                </button>
+
+
+                {/* Mobile Menu Button */}
+                <NavbarCollapseBtn />
+
+                {/* Mobile Menu */}
+                <NavbarCollapse className="lg:hidden sm:w-full">
+                    <NavbarList className="flex flex-col justify-start items-start space-y-3 w-full text-base mt-3">
+                        {navItemMobile}
                     </NavbarList>
+                </NavbarCollapse>
+            </NavbarContainer>
+        </Navbar>
 
-                    <button className="font-rubik hidden lg:flex font-semibold text-lg rounded-lg bg-[var(--color-primary)] hover:bg-[Var(--color-secondary)] transition duration-500 px-5 py-3 text-white flex-row justify-center items-center">
-                        <MdCall className="w-6 h-6 text-white mr-2"/>
-                        <span>CALL US</span>
-                    </button>
-
-                    {/* Mobile Menu Button */}
-                    <NavbarCollapseBtn />
-
-                    {/* Mobile Menu */}
-                    <NavbarCollapse className="lg:hidden sm:w-full">
-                        <NavbarList className="flex flex-col justify-start items-start space-y-3 w-full text-base mt-3">
-                            {navItemMobile}
-                        </NavbarList>
-                    </NavbarCollapse>
-                </NavbarContainer>
-            </Navbar>
-       
     );
 };
 
- export default NavBar;
+export default NavBar;
