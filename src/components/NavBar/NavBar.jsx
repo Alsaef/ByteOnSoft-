@@ -99,9 +99,9 @@ const NavBar = () => {
     );
 
     return (
-        <nav>
+      
             <Navbar
-                className={`fixed z-50 border-none w-full px-5 transition-colors duration-300 font-semibold ${isScrolled
+                className={`fixed z-50 border-none w-full px-5  transition-colors duration-300 font-semibold ${isScrolled
                         ? "bg-white text-[var(--color-primary)] shadow-xl"
                         : "bg-transparent text-white shadow-xl"
                     }`}
@@ -114,7 +114,7 @@ const NavBar = () => {
                             height={100}
                             alt="Logo"
                             loading="lazy"
-                            className="h-auto"
+                            className="h-auto rounded-full"
                         />
                     </NavbarBrand>
 
@@ -122,7 +122,6 @@ const NavBar = () => {
                     <NavbarList className="hidden lg:flex space-x-6 text-base">
                         {navItemDesktop}
                     </NavbarList>
-
                     <button className="font-rubik hidden lg:flex font-semibold text-lg rounded-lg bg-[var(--color-primary)] px-5 py-3 text-white flex-row justify-center items-center">
                         <MdCall className="w-6 h-6 text-white mr-2"/>
                         <span>CALL US</span>
@@ -139,8 +138,8 @@ const NavBar = () => {
                     </NavbarCollapse>
                 </NavbarContainer>
             </Navbar>
-        </nav>
+       
     );
 };
 
-export default NavBar;
+ export default NavBar;
