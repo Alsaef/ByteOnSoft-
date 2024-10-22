@@ -7,8 +7,10 @@ export const metadata = {
   
 const page = () => {
     return (
-        <div>
+        <div className='w-full'>
            <PageIttle pageTitle={'Career'} pageSubTitle={'Career'}></PageIttle> 
+
+           <h1 className='text-center text-gray-300 text-2xl font-bold md:text-3xl lg:text-4xl my-20'>CAREER OPPORTUNITY IS UNAVAILABLE NOW!!</h1>
         </div>
     );
 };
