@@ -2,7 +2,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
-import '@smastrom/react-rating/style.css'
+import "@smastrom/react-rating/style.css";
+import { IoChatbox } from "react-icons/io5";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,7 +18,8 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "ByteOnSoft",
-  description: "ByteOnSoft specializes in web development, UX/UI design, and  software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
+  description:
+    "ByteOnSoft specializes in web development, UX/UI design, and  software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
 };
 
 export default function RootLayout({ children }) {
@@ -26,12 +28,26 @@ export default function RootLayout({ children }) {
       <body
         className={`font-rubik ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar/>
-       <div className="min-h-screen">
-       {children}
-       </div>
-      <Footer/>
+        <NavBar />
+        <div className="min-h-screen relative">
+          {children}
+
+          <div className="fixed bottom-10 right-10">
+            <ChatButton />
+          </div>
+        </div>
+        <Footer />
       </body>
     </html>
+  );
+}
+
+function ChatButton() {
+  "use client";
+
+  return (
+    <button className="bg-[var(--color-primary)] p-4 rounded-lg cursor-pointer">
+      <IoChatbox className="w-7 h-7 text-white" />
+    </button>
   );
 }

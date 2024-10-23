@@ -19,22 +19,10 @@ export default function Home() {
       <Performance></Performance>
       <OurClient></OurClient>
       <ContactHome></ContactHome>
-      <Testimonials></Testimonials>
+      {/* <Testimonials></Testimonials> */}
       <TeamMember />
-
-      <div className="fixed bottom-10 right-10">
-        <ChatButton />
-      </div>
     </div>
   );
 }
 
-function ChatButton() {
-  "use client";
 
-  return (
-    <button className="bg-[var(--color-primary)] p-4 rounded-lg cursor-pointer">
-      <IoChatbox className="w-7 h-7 text-white"/>
-    </button>
-  );
-}

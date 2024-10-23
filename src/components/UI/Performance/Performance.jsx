@@ -11,21 +11,21 @@ const Performance = () => {
 
                     <div className='flex lg:flex-row md:flex-col sm:flex-col flex-col lg:items-start items-center justify-around w-full md:w-4/5'>
                         <div className='flex flex-col items-center gap-2'>
-                            <h2 className='text-4xl text-white font-bold'>23+</h2>
+                            <h2 className='text-4xl text-white font-bold'>1+</h2>
                             <p className='text-xl text-white font-bold'>Years Helping Business</p>
                         </div>
                         <div className='flex flex-col items-center gap-2'>
-                        <h2 className='text-4xl text-white font-bold'>250+</h2>
-                        <p className='text-xl text-white font-bold'>YWorking Employees</p>
+                        <h2 className='text-4xl text-white font-bold'>10+</h2>
+                        <p className='text-xl text-white font-bold'>Working Employees</p>
                         </div>
                         <div className='flex flex-col items-center gap-2'>
 
-                             <h2 className='text-4xl text-white font-bold'>4500+</h2>
+                             <h2 className='text-4xl text-white font-bold'>15+</h2>
                             <p className='text-xl text-white font-bold'>Complete Projects </p>
                         </div>
                         <div className='flex flex-col items-center gap-2'>
                           
-                        <h2 className='text-4xl text-white font-bold'>3000+</h2>
+                        <h2 className='text-4xl text-white font-bold'>12+</h2>
                         <p className='text-xl text-white font-bold'>Happy Customers</p>
                         </div>
                     </div>
