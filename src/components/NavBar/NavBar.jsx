@@ -123,7 +123,7 @@ const NavBar = () => {
                     {navItemDesktop}
                 </NavbarList>
 
-                <button className=" flex flex-row justify-start items-center">
+                <button className="flex-row justify-start items-center hidden lg:flex">
                     {/* <span className="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)] transform translate-x-[-100%] transition-transform duration-500 group-hover:translate-x-0"></span> */}
                     <MdCall className="w-6 h-6 mr-2 relative z-10" />
                     <span className="relative z-10 flex flex-col items-start justify-start">
