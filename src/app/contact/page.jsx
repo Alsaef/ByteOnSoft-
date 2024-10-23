@@ -5,7 +5,7 @@ export const metadata = {
 
 import ContactCard from '@/components/Card/ContactCard';
 import PageIttle from '@/components/PageItile/PageIttle';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa'
 
 const page = () => {
     return (
@@ -32,29 +32,29 @@ const page = () => {
                             </div>
                             <div className='flex flex-col justify-start items-start p-5 rounded-lg' style={{ boxShadow: "6px 6px 6px 0px rgb(0,0,0,0.2)" }}>
                                 <h2 className='text-lg md:text-xl lg:text-2xl font-bold text-[var(--color-primary)]'>Contact Us</h2>
-                                <h4 className='mt-3 md:text-lg'>Phone: +880 12345 12345</h4>
-                                <h4 className='md:text-lg'>Email: support@itpori.com</h4>
+                                <h4 className='mt-3 md:text-lg'>Phone: +880 15336 33913</h4>
+                                <h4 className='md:text-lg'>Email:     <a href='mailto:byteonsoft@gmail.com'>byteonsoft@gmail.com</a></h4>
                             </div>
                             <div className='flex flex-col justify-start items-start p-5 rounded-lg' style={{ boxShadow: "6px 6px 6px 0px rgb(0,0,0,0.2)" }}>
                                 <h2 className='text-lg md:text-xl lg:text-2xl font-bold text-[var(--color-primary)]'>Our Hours</h2>
                                 <h4 className='mt-3 md:text-lg'>We are open</h4>
-                                <h4 className='md:text-lg'>SUN - THUR 9:30 AM - 6:00 PM</h4>
+                                <h4 className='md:text-lg'>SUN - THUR 9:00 AM - 6:00 PM</h4>
                                 <h4 className='md:text-lg'>(GMT 6+)</h4>
                             </div>
                             <div className='flex flex-col justify-start items-start p-5 rounded-lg' style={{ boxShadow: "6px 6px 6px 0px rgb(0,0,0,0.2)" }}>
                                 <h2 className='text-lg md:text-xl lg:text-2xl font-bold text-[var(--color-primary)]'>Social Links</h2>
                                 <div className='flex flex-row justify-between items-center space-x-3 mt-5'>
-                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto'>
-                                        <FaFacebook className='w-6 h-6 text-white' />
+                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto cursor-pointer'>
+                                        <a target='_blank' href="https://www.facebook.com/byteonsoft"><FaFacebook className='w-6 h-6 text-white' /></a>
                                     </div>
-                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto'>
-                                        <FaTwitter className='w-6 h-6 text-white' />
+                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto cursor-pointer'>
+                                        <a href=""><FaTwitter className='w-6 h-6 text-white' /></a>
                                     </div>
-                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto'>
-                                        <FaLinkedin className='w-6 h-6 text-white' />
+                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto cursor-pointer'>
+                                        <a target='_blank' href="https://www.linkedin.com/company/byte-on-soft"><FaLinkedin className='w-6 h-6 text-white' /></a>
                                     </div>
-                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto'>
-                                        <FaInstagram className='w-6 h-6 text-white' />
+                                    <div className='bg-[var(--color-primary)] p-2 rounded-md flex m-auto cursor-pointer'>
+                                        <a target='_blank' href="https://www.youtube.com/@ByteOnSoft"><FaYoutube className='w-6 h-6 text-white' /></a>
                                     </div>
                                 </div>
                             </div>

@@ -9,6 +9,8 @@ import image6 from '../../../assets/client image/client-6.png';
 import image7 from '../../../assets/client image/client-7.png';
 import image8 from '../../../assets/client image/client-8.png';
 import image9 from '../../../assets/client image/client-9.png';
+import tutor_agency from '../../../assets/client image/Tutor_Agency.jpg'
+import DB_news from '../../../assets/client image/DB_News.jpg'
 import SectionTitle from '@/components/SectionTitle/SectionTitle';
 
 const OurClient = () => {
@@ -17,24 +19,33 @@ const OurClient = () => {
             {/* Title Section */}
             <SectionTitle
                 heading={'OUR CLIENTS'}
-                subHeading={'Trusted By Over 1500'}
+                subHeading={'Trusted By Over 15'}
             />
 
             {/* Image Grid Section */}
             <div className="flex flex-wrap justify-center gap-3 px-6">
                 {/* Image 1 */}
-                <div className="flex justify-center items-center">
+                <div className="h-[100px] rounded-lg border border-gray-300 shadow-lg flex justify-center items-center">
                     <Image
-                        src={image1}
+                        src={tutor_agency}
+                        alt="Client 1"
+                        width={150}
+                        height={100}
+                        className=""
+                    />
+                </div>
+                <div className="h-[100px] rounded-lg border border-gray-300 shadow-lg flex justify-center items-center">
+                    <Image
+                        src={DB_news}
                         alt="Client 1"
                         width={150}
                         height={150}
-                        className="rounded-lg border border-gray-300 shadow-lg "
+                        // className="rounded-lg border border-gray-300 shadow-lg "
                     />
                 </div>
 
                 {/* Image 2 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image5}
                         alt="Client 5"
@@ -42,10 +53,10 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
 
                 {/* Image 3 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image3}
                         alt="Client 3"
@@ -53,10 +64,10 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
 
                 {/* Image 4 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image4}
                         alt="Client 4"
@@ -64,10 +75,10 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
 
                 {/* Image 5 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image2}
                         alt="Client 2"
@@ -75,10 +86,10 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
 
                 {/* Image 6 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image6}
                         alt="Client 6"
@@ -86,10 +97,10 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
 
                 {/* Image 7 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image7}
                         alt="Client 7"
@@ -97,10 +108,10 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
 
                 {/* Image 8 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image8}
                         alt="Client 8"
@@ -108,10 +119,10 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
 
                 {/* Image 9 */}
-                <div className="flex justify-center items-center">
+                {/* <div className="flex justify-center items-center">
                     <Image
                         src={image9}
                         alt="Client 9"
@@ -119,8 +130,9 @@ const OurClient = () => {
                         height={150}
                         className="rounded-lg border border-gray-300 shadow-lg "
                     />
-                </div>
+                </div> */}
             </div>
+          
         </div>
     );
 };

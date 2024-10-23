@@ -13,7 +13,7 @@ const FinalHero = () => {
         const { width, height, left, top } = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - left; // Get the X position within the element
         const y = e.clientY - top;  // Get the Y position within the element
-        
+
         // Calculate the rotation angles
         const rotateY = ((x / width) * 30) - 15; // Rotate between -15deg to 15deg on Y axis
         const rotateX = -((y / height) * 30) + 15; // Rotate between -15deg to 15deg on X axis
@@ -47,13 +47,12 @@ const FinalHero = () => {
             {/* Main Content Section */}
             <div className='flex lg:flex-row md:flex-row sm:flex-col flex-col items-center justify-around px-5 gap-3 relative z-10'>
                 {/* Text Section */}
-                <div className='text-white'>
+                <div className='text-white w-11/12 md:w-1/2 xl:w-1/3'>
                     <h2 className='lg:text-6xl md:text-4xl sm:text-2xl text-2xl lg:text-left md:text-left sm:text-left text-center font-semibold'>
-                        IT Solutions & <br /> Business Services <br /> Company
+                        Leading Software  <br /> Development & <br /> IT Consulting Firm
                     </h2>
                     <p className='py-6 lg:text-left md:text-left sm:text-left text-center'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        <br /> magna aliqua, magna aliqua. ipsum is simply dummy text of the printing.
+                        We provide innovative software, website development, UI/UX design, and IT consulting. Our solutions are designed to help your business thrive with reliable and scalable technology.
                     </p>
                     <div className='flex items-center justify-center lg:justify-start gap-3'>
                         <button className='bg-white py-3 px-3 text-[var(--color-secondary)] rounded-lg font-semibold hover:bg-[var(--color-secondary)] hover:text-white transition duration-500'>
