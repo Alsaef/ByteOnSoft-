@@ -31,9 +31,9 @@ const AboutPage = () => {
       <div className='w-full'>
 
           <div className='w-11/12 md:w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 py-8 mt-20'>
-            <Card title={'Flexibility & Responsive'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature1} />
-            <Card title={'Dedicated Teams'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature2} />
-            <Card title={'Focusing on Business'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={feature3} />
+            <Card title={'Flexibility & Responsive'} description={'At ByteonSoft, we understand that flexibility and responsiveness are crucial for thriving in today’s fast-paced business environment. Our commitment to adaptability ensures that we can meet your evolving needs and help your business succeed.'} image={feature1} />
+            <Card title={'Dedicated Teams'} description={'At ByteonSoft, our dedicated teams are the backbone of our success. Committed to delivering excellence, each team is composed of experienced professionals who collaborate to ensure your projects are handled with the utmost care and expertise.'} image={feature2} />
+            <Card title={'Focusing on Business'} description={'At ByteonSoft, we prioritize your business objectives above all else. Our mission is to empower your organization through innovative technology solutions that drive growth, efficiency, and success.'} image={feature3} />
           </div>
 
         <div className='mt-28'>
@@ -48,10 +48,10 @@ const AboutPage = () => {
             subHeading={'Working Process'}
           />
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4 py-3'>
-            <WorkingCard title={'Discover'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess1} />
-            <WorkingCard title={'Design & Development'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess2} />
-            <WorkingCard title={'Install & Testing'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess3} />
-            <WorkingCard title={'Project Delivery'} description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam'} image={workprocess4} />
+            <WorkingCard title={'Discovery & Planning'} description={'We begin by understanding your business objectives and gathering detailed requirements. Through consultations and discussions, we define the project scope, timeline, and deliverables, ensuring alignment with your goals.'} image={workprocess1} />
+            <WorkingCard title={'Design & Development'} description={'Once the planning phase is complete, our dedicated teams move into the design and development stage. Here, we create prototypes and develop the solution, focusing on user experience and functionality. Regular feedback loops ensure that we stay aligned with your vision.'} image={workprocess2} />
+            <WorkingCard title={'Testing & Quality Assurance'} description={'After development, our rigorous testing phase begins. We conduct thorough testing to identify and resolve any issues, ensuring that the final product meets our high standards of quality and reliability. This step is crucial for delivering a flawless user experience.'} image={workprocess3} />
+            <WorkingCard title={'Project Delivery & Support'} description={'Once testing is complete, we deploy the solution and ensure a smooth transition for your team. Our commitment doesn’t end here; we provide ongoing support and maintenance, helping you to maximize the benefits of our solutions and adapt to any future needs. Our goal is to ensure that your project is delivered on time and exceeds your expectations.'} image={workprocess4} />
           </div>
 
         </div>

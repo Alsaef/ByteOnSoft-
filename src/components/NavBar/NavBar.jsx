@@ -123,10 +123,13 @@ const NavBar = () => {
                     {navItemDesktop}
                 </NavbarList>
 
-                <button className="relative font-rubik hidden lg:flex font-semibold text-lg rounded-lg bg-[var(--color-primary)] transition duration-500 px-5 py-3 text-white flex-row justify-center items-center overflow-hidden group">
+                <button className="relative font-rubik hidden lg:flex font-semibold text-sm rounded-lg bg-[var(--color-primary)] transition duration-300 px-5 py-3 text-white flex-row justify-center items-center overflow-hidden group">
                     <span className="absolute inset-0 bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-secondary)] transform translate-x-[-100%] transition-transform duration-500 group-hover:translate-x-0"></span>
                     <MdCall className="w-6 h-6 text-white mr-2 relative z-10" />
-                    <span className="relative z-10">CALL US</span>
+                    <span className="relative z-10 flex flex-col items-start justify-start">
+                        <span>call us now :</span>
+                        <span>+880 15336 33913</span>
+                    </span>
                 </button>
 
 
