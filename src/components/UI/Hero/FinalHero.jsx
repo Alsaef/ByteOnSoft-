@@ -22,7 +22,7 @@ const FinalHero = () => {
     };
 
     return (
-        <div className='bg-custom-gradient lg:bg-none h-full pb-10 md:pb-4 lg:pb-14 pt-24 relative mb-16'>
+        <div className='bg-custom-gradient lg:bg-none pb-10 md:pb-4 lg:pb-14 pt-24 relative mb-16'>
 
             <div className='hidden lg:block absolute  w-full h-full top-0'>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" version="1.1">
@@ -45,11 +45,11 @@ const FinalHero = () => {
 
 
             {/* Main Content Section */}
-            <div className='flex lg:flex-row md:flex-row sm:flex-col flex-col items-center justify-around px-5 gap-3 relative z-10'>
+            <div className='flex lg:flex-row md:flex-row flex-col items-center justify-around px-5 gap-3 relative z-10'>
                 {/* Text Section */}
-                <div className='text-white w-11/12 md:w-1/2 xl:w-1/3'>
-                    <h2 className='lg:text-6xl md:text-4xl sm:text-2xl text-2xl lg:text-left md:text-left sm:text-left text-center font-semibold'>
-                        Leading Software  <br /> Development & <br /> IT Consulting Firm
+                <div className='text-white w-11/12 md:w-1/2 xl:w-1/3 md:-mt-24 xl:mt-0'>
+                    <h2 className=' lg:text-4xl md:text-3xl text-xl lg:text-left md:text-left sm:text-left text-center font-semibold'>
+                        Leading Software  <br /> Development & IT <br /> Consulting Firm
                     </h2>
                     <p className='py-6 lg:text-left md:text-left sm:text-left text-center'>
                         We provide innovative software, website development, UI/UX design, and IT consulting. Our solutions are designed to help your business thrive with reliable and scalable technology.

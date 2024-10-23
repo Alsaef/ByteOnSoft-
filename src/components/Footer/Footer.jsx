@@ -58,7 +58,7 @@ const Footer = () => {
                                 <Link href="/contact"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Contact Us</li></Link>
                                 <Link href="/career"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Career</li></Link>
                                 <Link href="/privacy-policy"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Privacy Policy</li></Link>
-                                <Link href="/terms-&-conditions"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Terms & Conditions</li></Link>
+                                <Link href="/terms-&-condition"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Terms & Conditions</li></Link>
                             </ul>
                         </div>
                         <div className='text-white flex flex-col justify-start items-start'>
