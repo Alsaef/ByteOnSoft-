@@ -7,34 +7,17 @@ import Logo from '../../assets/logo/logo_orange.png';
 import { FaLocationDot } from 'react-icons/fa6'
 import { MdCall, MdMail } from 'react-icons/md'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { handleWhatsApp } from '@/utils';
 
 const Footer = () => {
-    
-    const handleWhatsApp = () => {
-        const phoneNumber = '+8801751379009';
-        const message = 'Hello, I want to contact with you.';
 
-        // Check if the user is on a mobile device
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-        let url;
-
-        if (isMobile) {
-            // Open WhatsApp in the Android app
-            url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        } else {
-            // Open WhatsApp in the desktop app
-            url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-        }
-
-        window.open(url, '_blank');
-    };
 
     return (
         <div className="mt-10">
             <footer className="bg-[#042C4C] shadow p-4">
                 <div className="w-full p-4 md:py-8">
-                    <div className="flex items-start  justify-evenly lg:flex-row flex-col gap-4">
+                    <div className="flex items-start justify-start lg:justify-between lg:flex-row flex-col w-full md:w-4/5 mx-auto">
                         <div className='flex flex-col justify-start items-start space-y-3 text-white'>
                             <Link href="/" className="flex items-center space-x-3">
                                 <Image src={Logo} width={250} height={250} className="rounded-full" alt="Logo" /> {/* Using Image from Next.js */}
@@ -42,7 +25,9 @@ const Footer = () => {
                             </Link>
                             <div className='flex flex-row justify-center items-center space-x-3 cursor-pointer pt-5'>
                                 <FaLocationDot className='w-5 h-5 text-white' />
-                                <p>Rampura, Banasree, Dhaka</p>
+                                <p>House #12 (Lift 5), Road-12, <br />
+                                    DIT Project, Merul Badda, Dhaka, <br />
+                                    Bangladesh</p>
                             </div>
                             <div className='flex flex-row justify-center items-center space-x-3 cursor-pointer'>
                                 <MdCall className='w-5 h-5 text-white' />
@@ -66,13 +51,14 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className='text-white flex flex-col justify-start items-start'>
-                            <h2 className='uppercase text-lg md:text-xl font-semibold'>Company</h2>
+                            <h2 className='uppercase text-lg md:text-xl font-semibold'>Useful Links</h2>
                             <ul className='list-disc pl-5 mt-3'>
-                                <li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Home</li>
-                                <li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Services</li>
-                                <li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Career</li>
-                                <li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>About us</li>
-                                <li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Contact</li>
+                                <Link href="/about"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>About Us</li></Link>
+                                <Link href="/services"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Services</li></Link>
+                                <Link href="/contact"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Contact Us</li></Link>
+                                <Link href="/career"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Career</li></Link>
+                                <Link href="/privacy-policy"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Privacy Policy</li></Link>
+                                <Link href="/terms-&-conditions"><li className='cursor-pointer hover:underline hover:text-lg transition ease-in duration-500'>Terms & Conditions</li></Link>
                             </ul>
                         </div>
                         <div className='text-white flex flex-col justify-start items-start'>
@@ -90,7 +76,10 @@ const Footer = () => {
                                 <div className='bg-white p-2 rounded-md flex m-auto cursor-pointer'>
                                     <a target='_blank' href="https://www.youtube.com/@ByteOnSoft"><FaYoutube className='w-6 h-6 text-[var(--color-primary)]' /></a>
                                 </div>
-                                <div onClick={handleWhatsApp} className='bg-white p-2 rounded-md flex m-auto cursor-pointer'>
+                                <div onClick={()=>{handleWhatsApp(
+                                    '+8801751379009',
+                                    'Hello, I want to contact with you.'
+                                )}} className='bg-white p-2 rounded-md flex m-auto cursor-pointer'>
                                     <FaWhatsapp className='w-6 h-6 text-[var(--color-primary)]' />
                                 </div>
                             </div>
