@@ -1,6 +1,11 @@
-import Apply from '@/components/Apply/Apply';
+// "use client"
+
 import PageIttle from '@/components/PageItile/PageIttle';
+import { HiOutlineBriefcase } from "react-icons/hi";
+
 import React from 'react';
+import CareerCard from '@/components/Card/CareerCard';
+import CareerModal from '@/components/Modals/CareerModal';
 export const metadata = {
     title: "CAREER | ByteOnSoft",
     description: "ByteOnSoft specializes in web development, UX/UI design, and software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
@@ -13,7 +18,28 @@ const page = () => {
 
             {/* <h1 className='text-center text-gray-300 text-2xl font-bold md:text-3xl lg:text-4xl my-20'>CAREER OPPORTUNITY IS UNAVAILABLE NOW!!</h1>
             */}
-            <h1 className='text-center text-gray-700 text-2xl font-bold md:text-3xl lg:text-4xl my-5 md:my-10'>Career Opportunity</h1>
+
+            <div className='w-11/12 md:w-4/5 mx-auto flex flex-col justify-center items-center mt-8 md:mt-10 space-y-8'>
+                {/* 
+                <CareerCard
+
+                title={'Graphic Design Intern'}
+                salary={'Unpaid'}
+                jobType={'Internship'}
+                jobCategory={'Designer'}
+                location={'Remote'}
+                />
+                 */}
+                <CareerModal
+                    title={'Graphic Design Intern'}
+                    salary={'Unpaid'}
+                    jobType={'Internship'}
+                    jobCategory={'Designer'}
+                    location={'Remote'}
+                />
+
+            </div>
+            {/* <h1 className='text-center text-gray-700 text-2xl font-bold md:text-3xl lg:text-4xl my-5 md:my-10'>Career Opportunity</h1>
             <div className='font-rubik flex flex-col justify-start items-start w-11/12 md:w-2/3 mx-auto'>
                 <p className='mb-3'><span className='font-semibold text-lg'>Remote Internship:</span> Graphic Designer (3 Months, Unpaid)</p>
                 <p className='mb-3 font-semibold'> We are looking for a creative and motivated Graphic Design Intern to join our remote team for a 3-month internship. This is a fantastic opportunity to gain hands-on experience in graphic design while working from the comfort of your home. The ideal candidate should be passionate about design, eager to learn, and ready to collaborate with our team virtually.</p>
@@ -55,7 +81,7 @@ const page = () => {
             id={1}
             />
             
-            </div>
+            </div> */}
 
         </div>
     );

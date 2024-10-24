@@ -1,5 +1,5 @@
-export const handleWhatsApp = (phoneNumber, message) => {
-    // const phoneNumber = phoneNumber;
+export const handleWhatsApp = ( message) => {
+    const phoneNumber = '+8801751379009';
     // const message = ;
 
     // Check if the user is on a mobile device
