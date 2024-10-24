@@ -77,7 +77,6 @@ const Footer = () => {
                                     <a target='_blank' href="https://www.youtube.com/@ByteOnSoft"><FaYoutube className='w-6 h-6 text-[var(--color-primary)]' /></a>
                                 </div>
                                 <div onClick={()=>{handleWhatsApp(
-                                    '+8801751379009',
                                     'Hello, I want to contact with you.'
                                 )}} className='bg-white p-2 rounded-md flex m-auto cursor-pointer'>
                                     <FaWhatsapp className='w-6 h-6 text-[var(--color-primary)]' />
