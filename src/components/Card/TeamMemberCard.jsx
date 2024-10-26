@@ -13,7 +13,7 @@ const TeamMemberCard = ({ image, name, position }) => {
 
             <div className='flex flex-col justify-center items-center font-rubik'>
                 <h1 className='text-lg md:text-xl font-semibold'>{name}</h1>
-                <h2 className='text-base md:text-lg text-[var(--color-primary)]'>{position}</h2>
+                <h2 className='text-center md:text-lg text-[var(--color-primary)]'>{position}</h2>
             </div>
         </div>
     );
