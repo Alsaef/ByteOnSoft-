@@ -10,6 +10,7 @@ import WhyChooseUs from "@/components/UI/WhyChooseUs/WhyChooseUs";
 import WhyTrustUs from "@/components/UI/WhyTrustUs/WhyTrustUs";
 
 export default function Home() {
+  
   return (
     <div className="relative">
       <FinalHero></FinalHero>

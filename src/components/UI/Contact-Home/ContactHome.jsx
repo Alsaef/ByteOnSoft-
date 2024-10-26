@@ -1,7 +1,8 @@
-import ContactCard from '@/components/Card/ContactCard';
+import dynamic from 'next/dynamic';
 import React from 'react';
 
 const ContactHome = () => {
+    const ContactCard = dynamic(() => import('@/components/Card/ContactCard'), { ssr: false })
     return (
         <div className='mt-16 bg-[var(--color-primary)] py-8 md:py-12 '>
              <div className='my-5'>
