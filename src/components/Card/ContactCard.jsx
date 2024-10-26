@@ -25,33 +25,61 @@ const ContactCard = ({ title, btnTxt }) => {
         Needs: ${needs},
         Budget: ${budget},
         Message: ${message}
-        `
+        `;
 
-        handleWhatsApp(messageData)
-
-        // Logging the data
-        // console.log(messageData);
+        handleWhatsApp(messageData);
     };
 
     return (
-        <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center w-full md:w-5/12 bg-white rounded-lg p-3 md:p-5' style={{ boxShadow: '6px 6px 6px 0px rgba(0, 0, 0, 0.2)' }}>
-            <h2 className='text-lg md:text-xl lg:text-2xl font-semibold text-[var(--color-primary)] mb-3'>{title}</h2>
-            <div className='w-full flex flex-col justify-start items-start space-y-3 mb-3'>
-                <label  className='text-base md:text-lg font-semibold'>Full Name*</label>
-                <input type="text" placeholder='Exe: Jhon Doe' name='name' className='p-3 border-2 rounded-md border-gray-500 focus:outline-none w-full' required />
+        <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center w-full md:w-5/12 bg-white rounded-lg p-3 md:p-5" style={{ boxShadow: '6px 6px 6px 0px rgba(0, 0, 0, 0.2)' }}>
+            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-[var(--color-primary)] mb-3">{title}</h2>
+            
+            {/* Full Name Field */}
+            <div className="relative w-full mb-3">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder=" "
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:border-black peer"
+                    required
+                />
+                <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black peer-focus:font-semibold peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
+                    Full Name*
+                </label>
             </div>
-            <div className='w-full flex flex-col justify-start items-start space-y-3 mb-3'>
-                <label  className='text-base md:text-lg font-semibold'>Email*</label>
-                <input type="email" placeholder='Exe: Jhon@Doe.com' name='email' className='p-3 border-2 rounded-md border-gray-500 focus:outline-none w-full' required />
+            
+            {/* Email Field */}
+            <div className="relative w-full mb-3">
+                <input
+                    type="email"
+                    name="email"
+                    placeholder=" "
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:border-black peer"
+                    required
+                />
+                <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black  peer-focus:font-semibold peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
+                    Email*
+                </label>
             </div>
-            <div className='w-full flex flex-col justify-start items-start space-y-3 mb-3'>
-                <label  className='text-base md:text-lg font-semibold'>Phone Number*</label>
-                <input type="text" placeholder='Exe: +880 12345 67899' name='phoneNumber' className='p-3 border-2 rounded-md border-gray-500 focus:outline-none w-full' required />
+
+            {/* Phone Number Field */}
+            <div className="relative w-full mb-3">
+                <input
+                    type="text"
+                    name="phoneNumber"
+                    placeholder=" "
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:border-black peer"
+                    required
+                />
+                <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black peer-focus:font-semibold peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
+                    Phone Number*
+                </label>
             </div>
-            <div className='w-full flex flex-col justify-start items-start space-y-3 mb-3'>
-                <label  className='text-base md:text-lg font-semibold'>Your Needs*</label>
-                <select name="needs" className='p-3 border-2 rounded-md border-gray-500 focus:outline-none w-full' required>
-                    <option  disabled selected>Select one</option>
+
+            {/* Needs Field */}
+            <div className="relative w-full mb-3">
+                <select name="needs" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:border-black peer" required>
+                    <option disabled selected value="">Select one</option>
                     <option value="Web Design and Development">Web Design and Development</option>
                     <option value="WordPress Development">WordPress Development</option>
                     <option value="E-Commerce Development">E-Commerce Development</option>
@@ -59,16 +87,41 @@ const ContactCard = ({ title, btnTxt }) => {
                     <option value="UI/UX Design">UI/UX Design</option>
                     <option value="Custom Software Development">Custom Software Development</option>
                 </select>
+                <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black peer-focus:font-semibold  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
+                    Your Needs*
+                </label>
             </div>
-            <div className='w-full flex flex-col justify-start items-start space-y-3 mb-3'>
-                <label  className='text-base md:text-lg font-semibold'>Your Project Budget*</label>
-                <input type="text" placeholder='Exe: 99,000 BDT' name='projectBudget' className='p-3 border-2 rounded-md border-gray-500 focus:outline-none w-full' required />
+
+            {/* Project Budget Field */}
+            <div className="relative w-full mb-3">
+                <input
+                    type="text"
+                    name="projectBudget"
+                    placeholder=" "
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:border-black peer"
+                    required
+                />
+                <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black peer-focus:font-semibold  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
+                    Your Project Budget*
+                </label>
             </div>
-            <div className='w-full flex flex-col justify-start items-start space-y-3 mb-3'>
-                <label  className='text-base md:text-lg font-semibold'>Message*</label>
-                <textarea placeholder='Exe: I want to......' name='message' className='p-3 border-2 rounded-md border-gray-500 focus:outline-none w-full h-28' required />
+
+            {/* Message Field */}
+            <div className="relative w-full mb-3">
+                <textarea
+                    name="message"
+                    placeholder=" "
+                    className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none focus:outline-none focus:border-black peer h-28"
+                    required
+                />
+                <label className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-black peer-focus:font-semibold peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4">
+                    Message*
+                </label>
             </div>
-            <button type='submit' className='text-white text-lg md:text-xl font-semibold px-4 py-3 rounded-lg bg-[var(--color-primary)] w-full'>{btnTxt}</button>
+
+            <button type="submit" className="text-white text-lg md:text-xl font-semibold px-4 py-3 rounded-lg bg-[var(--color-primary)] w-full">
+                {btnTxt}
+            </button>
         </form>
     );
 };
