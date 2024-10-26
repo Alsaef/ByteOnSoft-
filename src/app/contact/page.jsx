@@ -3,11 +3,13 @@ export const metadata = {
     description: " ByteOnSoft specializes in web development, UX/UI design, and  software development, delivering innovative digital solutions tailored to client needs. Our team focuses on creating seamless user experiences and high-performing applications to enhance business growth.",
 }
 
-import ContactCard from '@/components/Card/ContactCard';
+
 import PageIttle from '@/components/PageItile/PageIttle';
+import dynamic from 'next/dynamic';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa'
 
 const page = () => {
+    const ContactCard = dynamic(() => import('@/components/Card/ContactCard'), { ssr: false })
     return (
         <>
             <PageIttle pageTitle={"Contact Us"} pageSubTitle={'Contact'}></PageIttle>
