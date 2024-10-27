@@ -36,14 +36,14 @@ const ChatBoxCard = ({ toggleChatbox }) => {
                                 <input
                                     type="text"
                                     name='name'
-                                    placeholder="Type a Your Name"
+                                    placeholder="Type Your Name"
                                     className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                                     required
                                 />
                                 <input
                                     type="email"
                                     name='email'
-                                    placeholder="Type a Your Email"
+                                    placeholder="Type Your Email"
                                     className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                                     required
                                 />
