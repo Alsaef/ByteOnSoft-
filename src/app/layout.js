@@ -3,7 +3,8 @@ import "./globals.css";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import "@smastrom/react-rating/style.css";
-import { IoChatbox } from "react-icons/io5";
+
+import ChatButton from "@/components/UI/MessageBtn/MessageBtn";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -42,12 +43,4 @@ export default function RootLayout({ children }) {
   );
 }
 
-function ChatButton() {
-  "use client";
 
-  return (
-    <button className="bg-[var(--color-primary)] p-4 rounded-lg cursor-pointer">
-      <IoChatbox className="w-7 h-7 text-white" />
-    </button>
-  );
-}
