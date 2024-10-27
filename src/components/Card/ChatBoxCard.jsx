@@ -38,12 +38,14 @@ const ChatBoxCard = ({ toggleChatbox }) => {
                                     name='name'
                                     placeholder="Type a Youull Name"
                                     className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                                    required
                                 />
                                 <input
                                     type="email"
                                     name='email'
                                     placeholder="Type a Youull Email"
                                     className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                                    required
                                 />
 
                                 <button className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-r-md  transition duration-300">
