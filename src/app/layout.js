@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         <div className="min-h-screen relative">
           {children}
 
-          <div className="fixed bottom-10 right-10">
+          <div className="fixed z-50 bottom-10 right-10">
             <ChatButton />
           </div>
         </div>

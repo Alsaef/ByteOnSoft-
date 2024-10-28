@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 
 const ChatBoxCard = ({ toggleChatbox }) => {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(()=>{
+        const storedUser = localStorage.getItem("user");
+        return storedUser ? JSON.parse(storedUser) : null;
+    })
+    const [messages, setMessages] = useState([])
 
     const handelsubmit = (e) => {
         e.preventDefault()
@@ -15,8 +19,26 @@ const ChatBoxCard = ({ toggleChatbox }) => {
             email: email
         }
         setUser(userData)
+        localStorage.setItem("user", JSON.stringify(userData));
     }
 
+    const handelMessage = (e) => {
+        e.preventDefault()
+        const message = e.target.message.value
+        const messageData = {
+            message: message,
+            email: user?.email
+        }
+        console.log(messageData);
+        setMessages((preMessage)=>[...preMessage,messageData])
+
+        e.target.reset()
+    }
+
+
+
+    console.log(user);
+    console.log(messages);
     return (
         <>
             <div className="fixed bottom-16 right-4 w-80 bg-white p-4 rounded-lg shadow-lg border border-gray-200 ">
@@ -58,17 +80,27 @@ const ChatBoxCard = ({ toggleChatbox }) => {
                         <div className="h-64 overflow-y-auto p-2 border-t mt-2">
                             {/* Chat messages */}
                             <p>Welcome! How can I assist you today?</p>
+
+                           {
+                            messages?.map(message=>(
+                                <div className={`mb-2 ${user?.email===message.email?"text-right":"text-left"} `}>
+                                <p className="bg-[var(--color-primary)] text-white rounded-lg py-2 px-4 inline-block">{message.message}</p> <br />
+                                <span>{message.email}</span>
+                            </div>
+                            ))
+                           }
                         </div>
-                        <div className="flex mt-4">
+                        <form onSubmit={handelMessage} className="flex mt-4">
                             <input
                                 type="text"
+                                name='message'
                                 placeholder="Type a message"
                                 className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                             />
                             <button className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-r-md  transition duration-300">
                                 Send
                             </button>
-                        </div>
+                        </form >
                     </>
                 }
             </div>
