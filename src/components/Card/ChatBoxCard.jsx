@@ -1,44 +1,92 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
+import { io } from "socket.io-client";
+import CryptoJS from "crypto-js";
 
 const ChatBoxCard = ({ toggleChatbox }) => {
-    const [user, setUser] = useState(()=>{
+    const [user, setUser] = useState(() => {
         const storedUser = localStorage.getItem("user");
         return storedUser ? JSON.parse(storedUser) : null;
-    })
-    const [messages, setMessages] = useState([])
+    });
+    const [messages, setMessages] = useState([]);
 
-    const handelsubmit = (e) => {
-        e.preventDefault()
+    function getCurrentTime() {
+        const currentDate = new Date();
 
-        const name = e.target.name.value
-        const email = e.target.email.value
+        // Get hours and minutes
+        let hours = currentDate.getHours();
+        const minutes = currentDate.getMinutes();
 
-        const userData = {
-            name: name,
-            email: email
-        }
-        setUser(userData)
+        // Determine AM or PM
+        const amPm = hours >= 12 ? 'PM' : 'AM';
+
+        // Convert to 12-hour format
+        hours = hours % 12 || 12; // If hours is 0, set it to 12
+
+        // Format minutes to always have two digits
+        const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+
+        // Return formatted time
+        return `${hours} : ${formattedMinutes} ${amPm}`;
+    }
+
+    // const socket = io("https://byteonsoft-server.vercel.app"); // Connect to the server
+    const socket = io("http://localhost:5000"); // Connect to the server
+
+    const SECRET_KEY = process.env.MESSAGE_KEY || '7jdovN5K7OPHI3UcLkjhwB67HkTeA05HmOlC6y0AExE'
+
+    useEffect(() => {
+        // Listen for incoming messages
+        socket.on("receiveMessage", (messageData) => {
+            // Decrypt the message
+            //    const decryptedMessage = decryptMessage(messageData.message);
+            //    setMessages((prevMessages) => [
+            //        ...prevMessages,
+            //        { ...messageData, message: decryptedMessage },
+            //    ]);
+            console.log(messageData);
+            setMessages(prevMessages => {
+                return [...prevMessages, { ...messageData}]
+            })
+        });
+
+        // Cleanup on unmount
+        return () => {
+            socket.off("receiveMessage");
+        };
+    }, [socket]);
+
+    const encryptMessage = (message) => {
+        return CryptoJS.AES.encrypt(message, SECRET_KEY).toString();
+    };
+
+    const decryptMessage = (encryptedMessage) => {
+        const bytes = CryptoJS.AES.decrypt(encryptedMessage, SECRET_KEY);
+        return bytes.toString(CryptoJS.enc.Utf8);
+    };
+
+    const handleUserSubmit = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const phone = e.target.phone.value;
+
+        const userData = { name, email, phone };
+        setUser(userData);
         localStorage.setItem("user", JSON.stringify(userData));
-    }
+    };
 
-    const handelMessage = (e) => {
-        e.preventDefault()
-        const message = e.target.message.value
-        const messageData = {
-            message: message,
-            email: user?.email
-        }
-        console.log(messageData);
-        setMessages((preMessage)=>[...preMessage,messageData])
+    const handleSendMessage = (e) => {
+        e.preventDefault();
+        const messageText = e.target.message.value;
+        const messageData = { message: messageText, email: user?.email, sender: "user", time: getCurrentTime(),};
 
-        e.target.reset()
-    }
+        // Encrypt message before sending
+        // const encryptedMessage = encryptMessage(messageText);
+        socket.emit("sendMessage", messageData);
+        e.target.reset();
+    };
 
-
-
-    console.log(user);
-    console.log(messages);
     return (
         <>
             <div className="fixed bottom-16 right-4 w-80 bg-white p-4 rounded-lg shadow-lg border border-gray-200 ">
@@ -54,7 +102,7 @@ const ChatBoxCard = ({ toggleChatbox }) => {
                 {
                     !user ? <>
                         <div className='h-64 overflow-y-auto p-2 border-t mt-2'>
-                            <form onSubmit={handelsubmit} className=' flex flex-col items-center space-y-3'>
+                            <form onSubmit={handleUserSubmit} className=' flex flex-col items-center space-y-3'>
                                 <input
                                     type="text"
                                     name='name'
@@ -69,6 +117,13 @@ const ChatBoxCard = ({ toggleChatbox }) => {
                                     className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                                     required
                                 />
+                                <input
+                                    type="text"
+                                    name='phone'
+                                    placeholder="Type Your Phone Number"
+                                    className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                                    required
+                                />
 
                                 <button className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-r-md  transition duration-300">
                                     Submit
@@ -76,31 +131,30 @@ const ChatBoxCard = ({ toggleChatbox }) => {
                             </form>
                         </div>
                     </> : <>
-
-                        <div className="h-64 overflow-y-auto p-2 border-t mt-2">
-                            {/* Chat messages */}
-                            <p>Welcome! How can I assist you today?</p>
-
-                           {
-                            messages?.map(message=>(
-                                <div className={`mb-2 ${user?.email===message.email?"text-right":"text-left"} `}>
-                                <p className="bg-[var(--color-primary)] text-white rounded-lg py-2 px-4 inline-block">{message.message}</p> <br />
-                                <span>{message.email}</span>
-                            </div>
-                            ))
-                           }
+                        <div className="flex-1 overflow-y-scroll p-4 h-[250px]">
+                            <h5>How can I assist You?</h5>
+                            {messages.map((message, index) => (
+                                <div key={index} className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"} mb-2`}>
+                                    <div className={`p-3 rounded-lg max-w-xs ${message.sender === "user" ? "bg-[var(--color-primary)] text-white" : "bg-gray-100 text-black"}`}>
+                                        {message.message}
+                                        <div className={`text-xs text-gray-200 mt-1 text-right ${message.sender === 'user' ? "text-gray-200" : 'text-black'}`}>
+                                            {message.time}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                        <form onSubmit={handelMessage} className="flex mt-4">
+                        <form onSubmit={handleSendMessage} className="flex mt-4">
                             <input
                                 type="text"
-                                name='message'
+                                name="message"
                                 placeholder="Type a message"
                                 className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                             />
-                            <button className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-r-md  transition duration-300">
+                            <button className="bg-[var(--color-primary)] text-white px-4 py-2 rounded-r-md transition duration-300">
                                 Send
                             </button>
-                        </form >
+                        </form>
                     </>
                 }
             </div>
