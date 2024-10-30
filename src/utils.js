@@ -17,3 +17,8 @@ export const handleWhatsApp = ( message) => {
 
     window.open(url, '_blank');
 };
+
+export function generateUniqueId() {
+    return Math.random().toString(36).substring(2, 12);
+  }
+  

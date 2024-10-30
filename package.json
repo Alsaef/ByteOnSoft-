@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@smastrom/react-rating": "^1.5.0",
+    "axios": "^1.7.7",
     "crypto-js": "^4.2.0",
     "keep-react": "^1.5.0",
     "next": "14.2.15",
