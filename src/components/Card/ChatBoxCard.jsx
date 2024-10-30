@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import CryptoJS from "crypto-js";
+import axios from "axios";
+import { generateUniqueId } from "@/utils";
+
+const socket = io(process.env.NEXT_PUBLIC_BASE_URL);
 
 const ChatBoxCard = ({ toggleChatbox }) => {
     const [user, setUser] = useState(() => {
@@ -31,9 +35,24 @@ const ChatBoxCard = ({ toggleChatbox }) => {
     }
 
     // const socket = io("https://byteonsoft-server.vercel.app"); // Connect to the server
-    const socket = io("http://localhost:5000"); // Connect to the server
 
-    const SECRET_KEY = process.env.MESSAGE_KEY || '7jdovN5K7OPHI3UcLkjhwB67HkTeA05HmOlC6y0AExE'
+    const fetchMessage = async () => {
+        try {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-message`,{
+                chatIds: [user?.chatId]
+            })
+            console.log(response.data);
+            setMessages(response.data[0].messages);
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    // const SECRET_KEY = process.env.MESSAGE_KEY || '7jdovN5K7OPHI3UcLkjhwB67HkTeA05HmOlC6y0AExE'
+
+    useEffect(() => {
+        fetchMessage();
+    },[toggleChatbox])
 
     useEffect(() => {
         // Listen for incoming messages
@@ -46,7 +65,7 @@ const ChatBoxCard = ({ toggleChatbox }) => {
             //    ]);
             console.log(messageData);
             setMessages(prevMessages => {
-                return [...prevMessages, { ...messageData}]
+                return [...prevMessages, { ...messageData }]
             })
         });
 
@@ -56,34 +75,33 @@ const ChatBoxCard = ({ toggleChatbox }) => {
         };
     }, [socket]);
 
-    const encryptMessage = (message) => {
-        return CryptoJS.AES.encrypt(message, SECRET_KEY).toString();
-    };
-
-    const decryptMessage = (encryptedMessage) => {
-        const bytes = CryptoJS.AES.decrypt(encryptedMessage, SECRET_KEY);
-        return bytes.toString(CryptoJS.enc.Utf8);
-    };
-
     const handleUserSubmit = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const phone = e.target.phone.value;
+        const chatId = generateUniqueId()
+        const userData = { name, email, phone, chatId };
 
-        const userData = { name, email, phone };
         setUser(userData);
         localStorage.setItem("user", JSON.stringify(userData));
     };
 
-    const handleSendMessage = (e) => {
+    const handleSendMessage = async (e) => {
         e.preventDefault();
         const messageText = e.target.message.value;
-        const messageData = { message: messageText, email: user?.email, sender: "user", time: getCurrentTime(),};
-
-        // Encrypt message before sending
-        // const encryptedMessage = encryptMessage(messageText);
-        socket.emit("sendMessage", messageData);
+        const message = {
+            message: messageText,
+            email: user?.email,
+            sender: "user",
+            time: getCurrentTime(),
+            name: user?.name,
+            phone: user?.phone,
+            chatId: user?.chatId,
+            status: 'sent'
+        };
+        // Emit the message to other clients via socket
+        socket.emit("sendMessage", message);
         e.target.reset();
     };
 
