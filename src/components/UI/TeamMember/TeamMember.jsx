@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TeamMemberCard from '@/components/Card/TeamMemberCard';
 import SectionTitle from '@/components/SectionTitle/SectionTitle';
 import image1 from  "../../../assets/Team-Image/dipak_roy.jpg"
@@ -15,6 +15,7 @@ import { Autoplay, Parallax } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
+import axios from 'axios';
 
 const teamMembers = [
     {
@@ -64,11 +65,33 @@ const teamMembers = [
 
 const TeamMember = () => {
 
-    // const response = fetch('../../../../public/team_member_data.json')
+    const [members, setMembers] = useState([]);
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(true);
 
-    // const teamMember = response.json()
+    useEffect(() => {
+        const fetchingMembers = async () => {
+            try {
+                const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-all-team-members`);
+               
+                setMembers(res.data);
+                setLoading(false);
+                console.log(res.data);
+            } catch (error) {
+                setError(error.message || 'Failed to fetch team members');
+                setLoading(false);
+            }
+        };
 
-    // console.log(object);
+        fetchingMembers();
+    }, []);
+
+    if (loading) {
+        return loading
+    }
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
     return (
         <div className='mt-16 w-11/12 md:w-4/5 mx-auto'>
 
@@ -105,7 +128,7 @@ const TeamMember = () => {
                 }}
             >
               
-                {teamMembers.map((member) => (
+                {members.map((member) => (
                     <SwiperSlide key={member.id}>
                         <TeamMemberCard
                             image={member.image}
