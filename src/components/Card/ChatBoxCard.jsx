@@ -5,7 +5,7 @@ import CryptoJS from "crypto-js";
 import axios from "axios";
 import { generateUniqueId } from "@/utils";
 
-const socket = io(process.env.NEXT_PUBLIC_BASE_URL);
+// const socket = io(process.env.NEXT_PUBLIC_BASE_URL);
 
 const ChatBoxCard = ({ toggleChatbox }) => {
     const [user, setUser] = useState(() => {
