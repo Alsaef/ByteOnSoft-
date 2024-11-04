@@ -34,6 +34,16 @@ const ChatBoxCard = ({ toggleChatbox }) => {
         return `${hours} : ${formattedMinutes} ${amPm}`;
     }
 
+    function convertTo12HourFormat(timestamp) {
+        const date = new Date(timestamp);
+        const options = {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true,
+            // timeZone: 'Asia/Dhaka'
+                };
+        return date.toLocaleString('en-us', options);
+    }
     // const socket = io("https://byteonsoft-server.vercel.app"); // Connect to the server
 
     const fetchMessage = async () => {
@@ -57,23 +67,26 @@ const ChatBoxCard = ({ toggleChatbox }) => {
     useEffect(() => {
         // Listen for incoming messages
         socket.on("receiveMessage", (messageData) => {
-            // Decrypt the message
-            //    const decryptedMessage = decryptMessage(messageData.message);
-            //    setMessages((prevMessages) => [
-            //        ...prevMessages,
-            //        { ...messageData, message: decryptedMessage },
-            //    ]);
             console.log(messageData);
-            setMessages(prevMessages => {
-                return [...prevMessages, { ...messageData }]
-            })
+            
+            // Check if any new message matches the chatId
+            // const isMatched = messageData.messages.some(m => m.chatId === messageData.chatId);
+            const isMatched = messageData.chatId === user?.chatId;
+    
+            if (isMatched) {
+                setMessages(prevMessages => [
+                    ...prevMessages,
+                    { ...messageData } // Append the new message data if a match is found
+                ]);
+            }
         });
-
+    
         // Cleanup on unmount
         return () => {
             socket.off("receiveMessage");
         };
-    }, [socket]);
+    }, [socket, messages, user]);
+    
 
     const handleUserSubmit = (e) => {
         e.preventDefault();
@@ -94,7 +107,7 @@ const ChatBoxCard = ({ toggleChatbox }) => {
             message: messageText,
             email: user?.email,
             sender: "user",
-            time: getCurrentTime(),
+            time: new Date(),
             name: user?.name,
             phone: user?.phone,
             chatId: user?.chatId,
@@ -156,7 +169,7 @@ const ChatBoxCard = ({ toggleChatbox }) => {
                                     <div className={`p-3 rounded-lg max-w-xs ${message.sender === "user" ? "bg-[var(--color-primary)] text-white" : "bg-gray-100 text-black"}`}>
                                         {message.message}
                                         <div className={`text-xs text-gray-200 mt-1 text-right ${message.sender === 'user' ? "text-gray-200" : 'text-black'}`}>
-                                            {message.time}
+                                            {convertTo12HourFormat(message.time)}
                                         </div>
                                     </div>
                                 </div>
