@@ -5,11 +5,16 @@ export const metadata = {
 
 
 import PageIttle from '@/components/PageItile/PageIttle';
+import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa'
 
-const page = () => {
+const page = async() => {
     const ContactCard = dynamic(() => import('@/components/Card/ContactCard'), { ssr: false })
+    const res=await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-all-typographies`)
+      const typos=await res.data
+      const contactUs=typos.find(typo=>typo.sectionName==='Contact Us')
+      const Location=typos.find(typo=>typo.sectionName==='Location')
     return (
         <>
             <PageIttle pageTitle={"Contact Us"} pageSubTitle={'Contact'}></PageIttle>
@@ -27,15 +32,13 @@ const page = () => {
                     <div className='flex flex-col md:flex-row justify-center md:justify-evenly items-center'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10'>
                             <div className='flex flex-col justify-start items-start p-5 rounded-lg' style={{ boxShadow: "6px 6px 6px 0px rgb(0,0,0,0.2)" }}>
-                                <h2 className='text-lg md:text-xl lg:text-2xl font-bold text-[var(--color-primary)]'>Location</h2>
-                                <h4 className='mt-3 md:text-lg'> House #12 (Lift 5), Road-12,</h4>
-                                <h4 className='md:text-lg'>DIT Project, Merul Badda, Dhaka, </h4>
-                                <h4 className='md:text-lg'>Bangladesh</h4>
+                                <h2 className='text-lg md:text-xl lg:text-2xl font-bold py-2 text-[var(--color-primary)]'>Location</h2>
+                                <h4 className='md:text-lg'>DIT Project, {Location.subtitle} </h4>
                             </div>
                             <div className='flex flex-col justify-start items-start p-5 rounded-lg' style={{ boxShadow: "6px 6px 6px 0px rgb(0,0,0,0.2)" }}>
                                 <h2 className='text-lg md:text-xl lg:text-2xl font-bold text-[var(--color-primary)]'>Contact Us</h2>
-                                <h4 className='mt-3 md:text-lg'>Phone: +880 15336 33913</h4>
-                                <h4 className='md:text-lg'>Email:     <a href='mailto:byteonsoft@gmail.com'>byteonsoft@gmail.com</a></h4>
+                                <h4 className='mt-3 md:text-lg'>Phone:{contactUs.title}</h4>
+                                <h4 className='md:text-lg'>Email:     <a href='mailto:byteonsoft@gmail.com'>{contactUs.subtitle}</a></h4>
                             </div>
                             <div className='flex flex-col justify-start items-start p-5 rounded-lg' style={{ boxShadow: "6px 6px 6px 0px rgb(0,0,0,0.2)" }}>
                                 <h2 className='text-lg md:text-xl lg:text-2xl font-bold text-[var(--color-primary)]'>Our Hours</h2>

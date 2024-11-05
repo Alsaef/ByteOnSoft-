@@ -1,26 +1,12 @@
-"use client"
-
-import React, { useState } from 'react';
-import HeroImage from '../../../assets/image2/home-font.png';
-import HomeBottom from '../../../assets/image2/home-bottom-shape.png';
 import Image from 'next/image';
+import HomeBottom from '../../../assets/image2/home-bottom-shape.png';
+import axios from 'axios';
+import HeroImage from './HeroImage';
+const FinalHero =async () => {
 
-const FinalHero = () => {
-    const [rotation, setRotation] = useState({ rotateX: 0, rotateY: 0 });
-
-    const handleMouseMove = (e) => {
-        // Get the size and position of the element
-        const { width, height, left, top } = e.currentTarget.getBoundingClientRect();
-        const x = e.clientX - left; // Get the X position within the element
-        const y = e.clientY - top;  // Get the Y position within the element
-
-        // Calculate the rotation angles
-        const rotateY = ((x / width) * 30) - 15; // Rotate between -15deg to 15deg on Y axis
-        const rotateX = -((y / height) * 30) + 15; // Rotate between -15deg to 15deg on X axis
-
-        setRotation({ rotateX, rotateY });
-    };
-
+      const res=await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-all-typographies`)
+      const typos=await res.data
+      const typographies=typos.find(typo=>typo.sectionName==='Hero Section')
     return (
         <div className='bg-custom-gradient lg:bg-none pb-10 md:pb-4 lg:pb-14 pt-24 relative mb-16'>
 
@@ -49,10 +35,10 @@ const FinalHero = () => {
                 {/* Text Section */}
                 <div className='text-white w-11/12 md:w-1/2 xl:w-1/3 md:-mt-24 xl:mt-0'>
                     <h2 className=' lg:text-4xl md:text-3xl text-xl lg:text-left md:text-left sm:text-left text-center font-semibold'>
-                        Leading Software  <br /> Development & IT <br /> Consulting Firm
+                       {typographies.title}
                     </h2>
                     <p className='py-6 lg:text-left md:text-left sm:text-left text-center'>
-                        We provide innovative software, website development, UI/UX design, and IT consulting. Our solutions are designed to help your business thrive with reliable and scalable technology.
+                      {typographies.subtitle}
                     </p>
                     <div className='flex items-center justify-center lg:justify-start gap-3'>
                         <button className='bg-white py-3 px-3 text-[var(--color-secondary)] rounded-lg font-semibold hover:bg-[var(--color-secondary)] hover:text-white transition duration-500'>
@@ -65,25 +51,7 @@ const FinalHero = () => {
                 </div>
 
                 {/* Hero Image */}
-                <div
-                    className=""
-                    style={{
-                        willChange: 'transform',
-                        transform: `perspective(1000px) rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg) scale3d(1, 1, 1)`,
-                        transition: '300ms cubic-bezier(0.03, 0.98, 0.52, 0.99) '
-                    }}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={() => {
-                        setRotation({ rotateX: 0, rotateY: 0 });
-                    }}
-                >
-                    <Image
-                        src={HeroImage}
-                        width={600}
-                        height={600}
-                        alt="Hero image"
-                    />
-                </div>
+              <HeroImage></HeroImage>
             </div>
 
             {/* Bottom Image */}
